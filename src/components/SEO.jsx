@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
 const SEO = ({
   title,
@@ -12,6 +13,8 @@ const SEO = ({
 }) => {
   const fullImageUrl = new URL(image, url).toString();
   const fullLogoUrl = new URL(logo, url).toString();
+  const location = useLocation();
+  const canonicalUrl = `${url}${location.pathname}`;
 
   return (
     <Helmet>
@@ -19,14 +22,14 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
-      <meta property="og:url" content={url} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:url" content={canonicalUrl} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -38,9 +41,11 @@ const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "Service",
           url: url,
           logo: fullLogoUrl,
+          image:
+            "https://runalpha.co/team-assets/pexels-vanessa-loring-5082960.jpg",
           name: "RunAlpha",
           sameAs: [
             "https://www.linkedin.com/company/runalpha",
