@@ -1,48 +1,45 @@
-
 import { motion } from "framer-motion";
-
 
 export default function LandingPage() {
   return (
-
-    <div className="h-[800px] relative w-full lg:h-dvh shadow-2xl max-w-screen">
+    <div className="relative h-[800px] w-full max-w-screen shadow-2xl lg:h-dvh">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute -z-10 top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 -z-10 h-full w-full object-cover"
       >
         <source src="/videos/5224-183786646.mp4" type="video/mp4" />
-
       </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 -z-5"/>
-      <div className="flex flex-col items-start justify-center lg:px-28 xl:px-36 px-4 md:px-16 container mx-auto h-full tracking-wider z-20 text-white gap-6">
+      <div className="absolute top-0 left-0 -z-5 h-full w-full bg-black opacity-20" />
+      <div className="z-20 container mx-auto flex h-full flex-col items-start justify-center gap-6 px-4 tracking-wider text-white md:px-16 lg:px-28 xl:px-36">
         <div className="space-y-3 pt-48">
-          <p className="text-xl md:text-3xl xl:text-4xl font-quicksand font-bold">Run Alpha</p>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl md:max-w-[1300px] leading-8 sm:leading-[1.2] max-w-sm lg:max-w-4xl font-quicksand font-bold"
-            initial={{ y: '50%', opacity: 0 }}
-            animate={{ y: '0', opacity: 1 }}
-            transition={{ duration: 1.2, ease: 'easeInOut', delay: 0.4 }}
+          <p className="font-quicksand text-xl font-bold md:text-3xl xl:text-4xl">
+            Run Alpha
+          </p>
+          <motion.h1
+            className="font-quicksand max-w-sm text-3xl leading-8 font-bold sm:text-4xl sm:leading-[1.2] md:max-w-[1300px] md:text-5xl lg:max-w-4xl lg:text-6xl"
+            initial={{ y: "50%", opacity: 0 }}
+            animate={{ y: "0", opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }}
           >
-            Your Reliable <span className="text-secondary">Partner</span> <br />For Investment <br />Advisory
+            Your Reliable <span className="text-secondary">Partner</span> <br />
+            For Investment <br />
+            Advisory
           </motion.h1>
 
           <motion.p
-            className="text-[1.15rem] text-2xl md:text-3xl lg:text-4xl font-quicksand leading-6 sm:leading-none flex flex-row text-white font-semibold gap-2 text-nowrap"
-            initial={{ y: '100%', opacity: 0 }} // Start off-screen to the right with no opacity
-            animate={{ y: '0', opacity: 1 }}    // Move to the normal position with full opacity
-            transition={{ duration: 1.6, ease: 'easeInOut', delay: 0.4 }} // Duration, easing, and delay
+            className="font-quicksand flex flex-row gap-2 text-2xl text-[1.15rem] leading-6 font-semibold text-nowrap text-white sm:leading-none md:text-3xl lg:text-4xl"
+            initial={{ y: "100%", opacity: 0 }} // Start off-screen to the right with no opacity
+            animate={{ y: "0", opacity: 1 }} // Move to the normal position with full opacity
+            transition={{ duration: 1.6, ease: "easeInOut", delay: 0.4 }} // Duration, easing, and delay
           >
-             <span className="text-secondary">
-              Driven by Alpha,
-              </span>
-             <span className="">
-                  Powered by Data
-              </span>
+            <span className="text-secondary">Driven by Alpha,</span>
+            <span className="">Powered by Data</span>
           </motion.p>
         </div>
       </div>
     </div>
-  )
+  );
 }

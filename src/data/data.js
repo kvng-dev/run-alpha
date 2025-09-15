@@ -2,8 +2,8 @@ import { FaLinkedin } from "react-icons/fa";
 
 export const navLinksItems = [
   { name: "Home", href: "/", id: 1 },
-  { name: "About Us", href: "/aboutus", id: 2 },
-  { name: "What we Offer", href: "/offerings", id: 3 },
+  { name: "About Us", href: "/aboutus", id: 2 }, // ✅ Matches route
+  { name: "What we Offer", href: "/services", id: 3 },
   { name: "Team", href: "/team", id: 4 },
   { name: "Contact Us", href: "/contact", id: 5 },
 ];

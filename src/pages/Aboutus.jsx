@@ -1,18 +1,18 @@
-import HeroSectionCard from "../ui/HeroSectionCard"
-import { aboutSections, heroSectionData } from "../data/data"
-import { motion } from "framer-motion"
-import AboutCard from "../features/about/AboutCard"
-import SEO from "../components/SEO"
+import HeroSectionCard from "../ui/HeroSectionCard";
+import { aboutSections, heroSectionData } from "../data/data";
+import { motion } from "framer-motion";
+import AboutCard from "../features/about/AboutCard";
+import SEO from "../components/SEO";
 
 const AboutUs = () => {
-
   return (
-    <div className="w-full relative bg-[#F3F3F3]">
+    <div className="relative w-full bg-[#F3F3F3]">
       <SEO
-      title="About Us | Run Alpha"
-      description="Run Alpha, Nigeria's data-driven investment management and financial advisory firm. Learn about our commitment to risk-adjusted returns and wealth optimization"
-      url="https://runalpha.co/aboutus"
-    />
+        title="About Us | Run Alpha - Nigeria's Data-Driven Investment Experts"
+        description="Run Alpha, Nigeria's data-driven investment management and financial advisory firm. Learn about our commitment to risk-adjusted returns and wealth optimization"
+        url="https://runalpha.co/about"
+        type="website"
+      />
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,6 +27,6 @@ const AboutUs = () => {
         ))}
       </div>
     </div>
-  )
-}
-export default AboutUs
+  );
+};
+export default AboutUs;
