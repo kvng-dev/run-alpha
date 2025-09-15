@@ -36,10 +36,10 @@ function App() {
         <Route path="contact-us" element={<Navigate to="/contact" replace />} />
 
         {/* Handle trailing slashes */}
-        <Route path="aboutus/" element={<Navigate to="/aboutus" replace />} />
+        {/* <Route path="aboutus/" element={<Navigate to="/aboutus" replace />} />
         <Route path="services/" element={<Navigate to="/services" replace />} />
         <Route path="contact/" element={<Navigate to="/contact" replace />} />
-        <Route path="team/" element={<Navigate to="/team" replace />} />
+        <Route path="team/" element={<Navigate to="/team" replace />} /> */}
 
         {/* 404 - Must be last */}
         <Route path="*" element={<PageNotFound />} />
