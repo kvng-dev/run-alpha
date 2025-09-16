@@ -22,9 +22,9 @@ const SEO = ({
   const cleanPathname =
     location.pathname === "/" ? "/" : location.pathname.replace(/\/$/, "");
 
-  // Construct canonical URL properly
+  // Construct canonical URL properly - avoid double slashes
   const canonicalUrl =
-    cleanPathname === "/" ? baseUrl : `${baseUrl}${cleanPathname}`;
+    cleanPathname === "/" ? `${baseUrl}/` : `${baseUrl}${cleanPathname}`;
 
   // Ensure absolute URLs for images
   const fullImageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`;

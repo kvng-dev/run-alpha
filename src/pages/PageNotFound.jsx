@@ -11,7 +11,6 @@ function PageNotFound() {
         title="Page Not Found | Run Alpha"
         description="The page you're looking for doesn't exist. Return to Run Alpha's homepage to explore our investment management services."
         url="https://runalpha.co/404"
-        type="website"
         noIndex={true} // Don't index 404 pages
       />
       <main className="flex h-screen items-center justify-center bg-gray-100 p-12">

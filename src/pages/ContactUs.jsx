@@ -6,9 +6,8 @@ import { heroSectionData } from "../data/data";
 import { Toaster } from "react-hot-toast";
 import SEO from "../components/SEO";
 
-
 function ContactUs() {
-   const audioRef = useRef(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     // Play the beep sound every second
@@ -24,8 +23,6 @@ function ContactUs() {
       <SEO
         title="Contact Us | Get In Touch"
         description="We'd love to hear from you! Reach out to Run for inquiries, consultations, or collaborations."
-        url="https://runalpha.co/contact"
-        type="website"
       />
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -100,7 +97,6 @@ function ContactUs() {
       <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
-
 }
 
-export default  ContactUs
+export default ContactUs;

@@ -10,8 +10,6 @@ const AboutUs = () => {
       <SEO
         title="About Us | Run Alpha - Nigeria's Data-Driven Investment Experts"
         description="Run Alpha, Nigeria's data-driven investment management and financial advisory firm. Learn about our commitment to risk-adjusted returns and wealth optimization"
-        url="https://runalpha.co/about"
-        type="website"
       />
       <motion.div
         initial={{ opacity: 0, y: -20 }}

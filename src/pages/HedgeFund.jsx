@@ -10,8 +10,6 @@ const HedgeFund = () => {
       <SEO
         title="Hedge Fund | Run Alpha"
         description="Our approach combines cutting-edge technology with deep financial expertise to deliver superior risk-adjusted returns for institutional and accredited investors."
-        url="https://runalpha.co/hedge-fund"
-        type="website"
       />
       <motion.div
         initial={{ opacity: 0, y: -20 }}

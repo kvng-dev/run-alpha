@@ -27,8 +27,6 @@ function Team() {
       <SEO
         title="Meet the Team | Run Alpha"
         description="Meet the expert financial advisors & portfolio managers at Run Alpha, Nigeria's trusted investment management service for capital growth. Discover our team."
-        url="https://runalpha.co/team"
-        type="website"
       />
       <motion.div
         initial={{ opacity: 0, y: -20 }}

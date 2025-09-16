@@ -1,7 +1,7 @@
-import HeroSectionCard from "../ui/HeroSectionCard"
-import { heroSectionData, strategiesData, } from "../data/data"
-import StrategyAnimatedCard from "../features/strategies/StrategyAnimatedCard"
-import SEO from "../components/SEO"
+import HeroSectionCard from "../ui/HeroSectionCard";
+import { heroSectionData, strategiesData } from "../data/data";
+import StrategyAnimatedCard from "../features/strategies/StrategyAnimatedCard";
+import SEO from "../components/SEO";
 
 function Strategies() {
   return (
@@ -9,8 +9,6 @@ function Strategies() {
       <SEO
         title="Offerings | Our Offerings"
         description="Run Alpha offers family office services, wealth planning, and asset management for Nigerian investors. Discover data-driven strategies built for your goals."
-        url="https://runalpha.co/services"
-        type="website"
       />
       <HeroSectionCard data={heroSectionData.strategies} />
       <div className="w-full">
@@ -31,4 +29,4 @@ function Strategies() {
   );
 }
 
-export default Strategies
+export default Strategies;
