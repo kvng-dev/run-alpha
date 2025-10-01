@@ -104,9 +104,8 @@ const BlogCarousel = () => {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="font-lora mb-6 text-2xl font-bold text-gray-900 md:text-4xl">
-            Latest{" "}
             <span className="from-alpha to-alpha bg-gradient-to-r bg-clip-text text-transparent">
-              Insights
+              Latest Insights
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
