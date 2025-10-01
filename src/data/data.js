@@ -1,4 +1,4 @@
-import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export const navLinksItems = [
   { name: "Home", href: "/", id: 1 },
@@ -11,9 +11,21 @@ export const navLinksItems = [
 export const socials = [
   {
     id: 1,
-    href: "",
+    href: "https://www.linkedin.com/company/runalpha/",
     name: "LinkedIn",
     icon: FaLinkedin,
+  },
+  {
+    id: 2,
+    href: "https://www.facebook.com/profile.php?id=61581323386413",
+    name: "Facebook",
+    icon: FaFacebook,
+  },
+  {
+    id: 3,
+    href: "https://www.instagram.com/runalpha.co/",
+    name: "Instagram",
+    icon: FaInstagram,
   },
 ];
 

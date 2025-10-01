@@ -110,9 +110,9 @@ const BlogCarousel = () => {
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
-            Stay ahead with expert analysis on investment strategies, FX risk
-            management, and wealth protection from our team of financial
-            professionals.
+            We&apos;re more than wealth managers — we&apos;re partners in
+            preserving heritage, navigating today&apos;s market, growing across
+            borders, and building legacies that last for genrations.
           </p>
         </div>
 
