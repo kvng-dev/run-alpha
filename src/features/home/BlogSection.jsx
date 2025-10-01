@@ -112,7 +112,7 @@ const BlogCarousel = () => {
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
             We&apos;re more than wealth managers — we&apos;re partners in
             preserving heritage, navigating today&apos;s market, growing across
-            borders, and building legacies that last for genrations.
+            borders, and building legacies that last for generations.
           </p>
         </div>
 
