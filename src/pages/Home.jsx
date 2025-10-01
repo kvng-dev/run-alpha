@@ -4,6 +4,7 @@ import AboutUsHomeSection from "../features/home/AboutUsHomeSection";
 import StatisticsSection from "../features/home/StatisticsSection";
 import GetIntouch from "../features/home/GetIntouch";
 import SEO from "../components/SEO";
+import BlogCarousel from "../features/home/BlogSection";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <StatisticsSection />
       <StrategiesHomeSection />
       <GetIntouch />
+      <BlogCarousel />
     </div>
   );
 }
