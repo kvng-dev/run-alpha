@@ -107,25 +107,25 @@ export default teamMembers;
 
 export const strategies = [
   {
-    id: "family-office", // Added an id field
+    id: "family-office",
     title: "Family Office",
     description: `Create lasting legacies and ensure seamless wealth transfer with our comprehensive family office services and financial planning to suit your needs.`,
     image: "/pexels-rdne-7951553.jpg",
   },
   {
-    id: "private-wealth", // Added an id field
+    id: "private-wealth",
     title: "Private Wealth",
     description: `Experience personalized private wealth management and expert investment advisory designed exclusively for discerning high-net-worth individuals.`,
     image: "/pexels-pixabay-235990.jpg",
   },
   {
-    id: "hedge-fund", // Added an id field
+    id: "hedge-fund",
     title: "Hedge Fund",
     description: `Diversify your portfolio and pursue enhanced risk-adjusted returns with our access to sophisticated hedge fund investment opportunities.`,
     image: "/pexels-rickyrecap-2295433.jpg",
   },
   {
-    id: "fx-currency-solution", // Added an id field
+    id: "fx-currency-solution",
     title: "FX Currency Solution",
     description:
       "Proactively manage currency exposures and optimize international transactions with our strategic foreign exchange risk management solutions.",
@@ -276,7 +276,7 @@ export const strategiesData = [
     id: "fx-currency-solution",
     title: "FX Currency Solution",
     description: `
-      At Run Alpha, we provide strategic foreign exchange (FX) solutions to help clients manage currency exposure, optimize international transactions, and hedge against market volatility.
+      At <a href="/" class="text-secondary underline">Run Alpha,</a> we provide strategic foreign exchange (FX) solutions to help clients manage currency exposure, optimize international transactions, and hedge against market volatility.
       <br />
       Whether you are an investor, business owner, or family office managing global wealth, our FX services are designed to enhance financial efficiency and mitigate currency risks. Our FX Currency Solutions include:
     `,
@@ -307,21 +307,25 @@ export const aboutSections = [
     title: "Driven by Alpha. Powered by Data",
     text: `True alpha comes from resilience, innovation, adaptability, and a relentless pursuit of excellence. That's why we combine robust institutional investment services expertise with a boutique, client-centric approach, offering tailored wealth management solutions that align with your financial goals. Whether you’re navigating volatile markets or securing multi-generational wealth through advanced financial planning, our commitment remains unwavering: to protect, grow, and optimize your financial legacy with integrity, transparency, and a long-term perspective, consistently aiming for risk-adjusted returns and capital growth.`,
     imageUrl: "/about/pexels-filipgrobgaard-28426645.jpg",
+    linkUrl: "/",
   },
   {
     title: "Proven Performance, Trusted by Investors",
     text: `At Run Alpha, our commitment to delivering consistent capital growth has led to a growing track record of success and increasing investor confidence in investment management in Africa. As our performance continues to strengthen, we have attracted a diverse group of high-net-worth individuals and institutional investors. By refining our portfolio strategies and leveraging data-driven insights, we have further optimized risk-adjusted performance and portfolio optimization, deepening trust among our investors and partners. Our dedication to excellence and innovation has positioned us as a trusted partner in investment advisory in Africa, driving long-term growth and success for our clients.`,
     imageUrl: "/two-african-businessman-sitting-outside-cafe.jpg",
+    linkUrl: "/",
   },
   {
     title: "Our Investment Philosophy",
     text: `Our philosophy is centered on generating consistent, risk-adjusted returns by employing a dynamic mix of fundamental research, quantitative analysis, and macroeconomic insights. Our investment strategies span across equities, fixed income, derivatives, and alternative assets such as hedge fund investment opportunities, providing diversified exposure while maintaining a strong focus on risk management and portfolio optimization. By staying adaptable and offering sustainable investment solutions, we aim to protect and grow our client’s wealth over the long term. Our quantitative investment strategies are designed to deliver alpha in any market environment, providing a competitive edge and driving long-term success for our clients' financial security and capital growth.`,
     imageUrl: "/pexels-googledeepmind-17485658.jpg",
+    linkUrl: "/services",
   },
   {
     title: "Building for the future",
     text: `Investor confidence is built on transparency, integrity, and a relentless focus on delivering results for clients seeking investment management in Africa and the diaspora. We maintain open communication, providing insights and strategic financial advisory guidance to our clients. With a proven track record of success, we continue to refine and expand our approach, ensuring alignment with evolving market opportunities for comprehensive wealth management. As we grow, our mission remains unchanged: to generate data-driven alpha and create lasting value for our client's long-term and short-term investments. At Run Alpha, our momentum is strong, our strategies are refined, and our clients’ trust continues to grow as we scale new heights; we remain focused on delivering excellence and positioning our clients for sustained success.`,
     imageUrl: "/unsplash.jpg",
+    linkUrl: "/team",
   },
 ];
 

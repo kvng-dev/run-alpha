@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import { FaNairaSign } from "react-icons/fa6";
 import { useInView } from "react-intersection-observer";
 
 const StatisticsSection = () => {
@@ -27,7 +26,7 @@ const StatisticsSection = () => {
         className="space-y-4 text-center md:text-start"
       >
         <p className="text-lg md:text-xl">Est. since</p>
-        <h1 className="text-3xl font-bold md:text-6xl">2021</h1>
+        <h3 className="text-3xl font-bold md:text-6xl">2021</h3>
         <p className="max-w-xs text-base md:text-lg">
           Founded in 2021, we have crafted winning investment strategies that
           have demonstrated resilience, adaptability, and capital growth across
@@ -48,37 +47,37 @@ const StatisticsSection = () => {
       >
         {/* Assets Under Management */}
         <div className="text-center" ref={assetsRef}>
-          <h1 className="flex justify-center text-2xl font-bold md:text-4xl">
+          <p className="flex justify-center text-2xl font-bold md:text-4xl">
             ₦
             {assetsInView && (
               <CountUp start={0} end={1.5} duration={6} decimals={2} />
             )}
             bn
-          </h1>
+          </p>
           <p className="md:text-lg">Assets under Management</p>
         </div>
 
         {/* Client Retention Rate */}
         <div className="text-center" ref={retentionRef}>
-          <h1 className="text-2xl font-bold md:text-4xl">
+          <p className="text-2xl font-bold md:text-4xl">
             {retentionInView && <CountUp start={0} end={95} duration={3} />}%
-          </h1>
+          </p>
           <p className="md:text-lg">Client Retention Rate</p>
         </div>
 
         {/* Experienced Team */}
         <div className="mb-6 text-center sm:mb-0" ref={teamRef}>
-          <h1 className="text-2xl font-bold md:text-4xl">
+          <p className="text-2xl font-bold md:text-4xl">
             {teamInView && <CountUp start={0} end={6} duration={3} />}
-          </h1>
+          </p>
           <p className="md:text-lg">Experienced team</p>
         </div>
 
         {/* Cumulative Experience */}
         <div className="text-center" ref={experienceRef}>
-          <h1 className="text-2xl font-bold md:text-4xl">
+          <p className="text-2xl font-bold md:text-4xl">
             {experienceInView && <CountUp start={0} end={36} duration={3} />}
-          </h1>
+          </p>
           <p className="md:text-lg">Years cumulative experience</p>
         </div>
       </motion.div>

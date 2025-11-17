@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SEO from "../components/SEO";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Disclaimer = () => {
   const [accepted, setAccepted] = useState(false);

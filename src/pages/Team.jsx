@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import TeamSection from "../features/team/TeamSection";
 import { PiArrowBendUpLeftBold, PiArrowBendUpRightBold } from "react-icons/pi";
 import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 function Team() {
   const [cards, setCards] = useState(teamMembers);
@@ -86,9 +87,9 @@ function Team() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="font-lora text-alpha row-start-2 mb-8 text-xl font-extrabold capitalize md:text-3xl">
+          <h3 className="font-lora text-alpha row-start-2 mb-8 text-xl font-extrabold capitalize md:text-3xl">
             workplace & culture
-          </h2>
+          </h3>
           <p className="font-quicksand mb-6 text-base leading-relaxed tracking-[2] lg:text-xl">
             We believe that a successful and productive team is one where
             everyone feels valued and respected. Our culture values open
@@ -184,14 +185,18 @@ function Team() {
           What We Offer
         </h2>
         <p className="font-quicksand mx-auto max-w-sm text-base leading-relaxed tracking-[2] md:max-w-7xl md:text-base lg:text-[20px]">
-          At Run Alpha, we strive to offer a comprehensive and transparent
-          investment experience that aligns with our clients&apos; financial
-          goals and risk tolerance. We believe that by providing a safe,
-          transparent, and accessible platform, we can help clients make
-          informed decisions while also fostering a culture of continuous
-          learning and growth. Our mission is to create a platform that empowers
-          individuals to make informed decisions, while also fostering a culture
-          of continuous learning and growth.
+          At{" "}
+          <Link to="/" className="hover:text-secondary hover:underline">
+            Run Alpha,
+          </Link>{" "}
+          we strive to offer a comprehensive and transparent investment
+          experience that aligns with our clients&apos; financial goals and risk
+          tolerance. We believe that by providing a safe, transparent, and
+          accessible platform, we can help clients make informed decisions while
+          also fostering a culture of continuous learning and growth. Our
+          mission is to create a platform that empowers individuals to make
+          informed decisions, while also fostering a culture of continuous
+          learning and growth.
         </p>
       </div>
 

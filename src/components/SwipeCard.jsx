@@ -1,7 +1,16 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 
-const SwipeCard = ({ id, cards, setCards, image, quote, title, name, qualification }) => {
+const SwipeCard = ({
+  id,
+  cards,
+  setCards,
+  image,
+  quote,
+  title,
+  name,
+  qualification,
+}) => {
   const x = useMotionValue(0);
   const opacity = useTransform(x, [-150, 0, 150], [0, 1, 0]);
   const rotateR = useTransform(x, [-150, 150], [-18, 18]);
@@ -47,7 +56,7 @@ const SwipeCard = ({ id, cards, setCards, image, quote, title, name, qualificati
   return (
     <motion.div
       key={id}
-      className="mx-auto rounded-lg origin-bottom object-cover hover:cursor-grab active:cursor-grabbing h-dvh relative"
+      className="relative mx-auto h-dvh origin-bottom rounded-lg object-cover hover:cursor-grab active:cursor-grabbing"
       style={{
         gridRow: 1,
         gridColumn: 1,
@@ -64,34 +73,42 @@ const SwipeCard = ({ id, cards, setCards, image, quote, title, name, qualificati
       onDragEnd={handleDragEnd}
     >
       {/* Card Content */}
-      <div className="bg-alpha w-[350px] md:w-[400px] lg:w-[720px] h-auto shadow-md rounded-xl p-12 flex flex-col items-center text-center space-y-8 cursor-pointer group hover:text-white text-white ease-in-out duration-300 border border-white">
-        <img src={image} alt={name} className="rounded-full h-30 w-30 object-cover" />
-        <blockquote className="text-white lg:text-xl italic leading-7 font-inter group-hover:text-white text-justify w-full">
-          <div className="w-full flex justify-start mt-6">
+      <div className="bg-alpha group flex h-auto w-[350px] cursor-pointer flex-col items-center space-y-8 rounded-xl border border-white p-12 text-center text-white shadow-md duration-300 ease-in-out hover:text-white md:w-[400px] lg:w-[720px]">
+        <img
+          src={image}
+          alt={name}
+          className="h-30 w-30 rounded-full object-cover"
+        />
+        <blockquote className="font-inter w-full text-justify leading-7 text-white italic group-hover:text-white lg:text-xl">
+          <div className="mt-6 flex w-full justify-start">
             <FaQuoteLeft size={25} className="mb-6" />
           </div>
           {quote}
-          <div className="w-full flex justify-end mt-6">
+          <div className="mt-6 flex w-full justify-end">
             <FaQuoteRight size={25} />
           </div>
         </blockquote>
-        {qualification.degree ?
-        <>
-          <div className="text-start">
-            <h2 className="text-lg font-semibold">Qualification</h2>
-            <div className="flex items-center gap-2 pl-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-white" />
-              {qualification.degree}</div>
+        {qualification.degree ? (
+          <>
+            <div className="text-start">
+              <h2 className="text-lg font-semibold">Qualification</h2>
               <div className="flex items-center gap-2 pl-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-white" />
-              {qualification.institute}</div>
-             </div>
-
-          </> : <div className='hidden'></div>}
-           <div>
-              <h2 className="text-lg font-semibold">{name}</h2>
-              <p className="mb-8">{title}</p>
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                {qualification.degree}
+              </div>
+              <div className="flex items-center gap-2 pl-4">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                {qualification.institute}
+              </div>
             </div>
+          </>
+        ) : (
+          <div className="hidden"></div>
+        )}
+        <div>
+          <h2 className="text-lg font-semibold">{name}</h2>
+          <p className="mb-8">{title}</p>
+        </div>
       </div>
     </motion.div>
   );

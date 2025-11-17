@@ -3,7 +3,7 @@ import ProfileCard from "./TeamProfileCard";
 
 const TeamSection = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  gap-3 px-6">
+    <div className="grid grid-cols-1 gap-3 px-6 md:grid-cols-2">
       {teamMembers.map((member) => (
         <ProfileCard
           key={member.id}
@@ -11,8 +11,8 @@ const TeamSection = () => {
           name={member.name}
           title={member.title}
           quote={member.quote}
-          />
-        ))}
+        />
+      ))}
     </div>
   );
 };

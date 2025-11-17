@@ -12,7 +12,7 @@ const PrivacyPolicyPage = () => {
         noIndex={true}
       />
       <div className="mx-start px-8 py-32 md:px-34 xl:max-w-7xl xl:px-48">
-        <h1 className="mb-6 text-3xl font-bold">Privacy Policy</h1>
+        <h2 className="mb-6 text-3xl font-bold">Privacy Policy</h2>
 
         <section className="mb-6">
           <h2 className="text-2xl font-semibold">1. Introduction</h2>
