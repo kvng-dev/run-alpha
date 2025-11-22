@@ -53,11 +53,10 @@ function ContactUs() {
   return (
     <>
       <SEO
-        title="Contact RunAlpha - Investment Advisory in Lagos, Nigeria"
-        description="Get in touch with RunAlpha's expert financial advisors. Schedule a consultation to discuss your investment goals and wealth management needs. Located at 1 Uwa Close, Oregun, Lagos."
-        keywords="contact runalpha, investment consultation Lagos, financial advisor contact Nigeria, wealth management consultation, runalpha office Lagos"
+        title="Contact RunAlpha - Schedule Investment Consultation | Financial Advisory Lagos Nigeria"
+        description="Contact RunAlpha's investment advisors in Lagos, Nigeria. Schedule a consultation for wealth management, portfolio analysis, and financial planning services. Located at 1 Uwa Close, Oregun, Lagos. Call +234 909 371 7972 or email hello@runalpha.co for expert investment guidance."
+        keywords="contact RunAlpha Lagos, investment consultation Nigeria, financial advisor consultation Lagos, wealth management meeting Nigeria, schedule investment review, portfolio consultation Lagos, financial planning appointment Nigeria"
         url="https://runalpha.co/contact"
-        type="website"
       />
 
       {/* Additional LocalBusiness Schema */}

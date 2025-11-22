@@ -24,6 +24,8 @@ const BlogCarousel = () => {
       readTime: "8 min read",
       category: "Investment Management",
       image: "/desk-from-top-view.jpg",
+      imageAlt:
+        "Professional investment advisor reviewing digital portfolio management tools at modern desk",
       slug: "investment-management-digital-age",
     },
     {
@@ -38,6 +40,8 @@ const BlogCarousel = () => {
       category: "FX Risk Management",
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageAlt:
+        "Foreign exchange currency trading charts showing portfolio fluctuations and risk analysis",
       slug: "fx-fluctuations-portfolio-risks",
     },
     {
@@ -52,6 +56,8 @@ const BlogCarousel = () => {
       category: "Hedging Strategies",
       image:
         "/coworkers-addressing-innovation-initiatives-research-development-efforts (1).jpg",
+      imageAlt:
+        "Investment team discussing hedging strategies and risk management for Nigerian portfolios",
       slug: "hedging-strategies-fx-fluctuations",
     },
     {
@@ -65,6 +71,8 @@ const BlogCarousel = () => {
       readTime: "9 min read",
       category: "Portfolio Protection",
       image: "/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg",
+      imageAlt:
+        "Financial charts showing portfolio protection strategies during market volatility in Nigeria",
       slug: "fx-assets-protect-nigerian-portfolios",
     },
   ];
@@ -99,27 +107,33 @@ const BlogCarousel = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 py-20">
+    <section
+      className="overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 py-20"
+      aria-label="Investment insights and articles"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
+        {/* Section Header - SEO Optimized */}
+        <header className="mb-16 text-center">
           <h2 className="font-lora mb-6 text-2xl font-bold text-gray-900 md:text-4xl">
             <span className="from-alpha to-alpha bg-gradient-to-r bg-clip-text text-transparent">
-              Latest Insights
+              Investment Insights & Market Analysis
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600">
-            We&apos;re more than wealth managers — we&apos;re partners in
-            preserving heritage, navigating today&apos;s market, growing across
-            borders, and building legacies that last for generations.
+          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+            Expert insights on investment management, wealth planning, and
+            portfolio strategies for Nigerian investors. Stay informed with
+            data-driven analysis from RunAlpha's financial advisory team.
           </p>
-        </div>
+        </header>
 
         {/* Carousel Container */}
         <div
           className="relative grid grid-cols-1"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
+          role="region"
+          aria-label="Blog posts carousel"
+          aria-live="polite"
         >
           {/* Blog Cards */}
           <div className="overflow-hidden rounded-3xl">
@@ -128,14 +142,19 @@ const BlogCarousel = () => {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {blogPosts.map((post, index) => (
-                <div key={post.id} className="w-full flex-shrink-0 px-4">
+                <article
+                  key={post.id}
+                  className="w-full flex-shrink-0 px-4"
+                  aria-hidden={currentIndex !== index}
+                >
                   <div className="group overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-500 hover:shadow-2xl">
                     <div className="md:flex">
-                      {/* Image Section */}
+                      {/* Image Section with proper alt text */}
                       <div className="relative overflow-hidden md:w-1/2">
                         <img
                           src={post.image}
-                          alt={post.title}
+                          alt={post.imageAlt}
+                          loading={index === 0 ? "eager" : "lazy"}
                           className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110 md:h-full"
                         />
                         <div className="absolute top-4 left-4">
@@ -157,19 +176,26 @@ const BlogCarousel = () => {
                             {post.excerpt}
                           </p>
 
-                          <div className="mb-4 flex items-center gap-4 text-sm text-gray-500">
+                          <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-gray-500">
                             <div className="flex items-center gap-1">
-                              <User size={16} />
+                              <User size={16} aria-hidden="true" />
                               <span>{post.author}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Calendar size={16} />
-                              <span>
-                                {new Date(post.date).toLocaleDateString()}
-                              </span>
+                              <Calendar size={16} aria-hidden="true" />
+                              <time dateTime={post.date}>
+                                {new Date(post.date).toLocaleDateString(
+                                  "en-US",
+                                  {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                  },
+                                )}
+                              </time>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Clock size={16} />
+                              <Clock size={16} aria-hidden="true" />
                               <span>{post.readTime}</span>
                             </div>
                           </div>
@@ -178,56 +204,68 @@ const BlogCarousel = () => {
                         <a
                           href={`https://blog.runalpha.co/${post.slug}`}
                           className="group/btn hover:text-alpha text-alpha inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300"
+                          aria-label={`Read more about ${post.title}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <p>Read More</p>
+                          <span>Read Full Article</span>
                           <ArrowRight
                             size={16}
                             className="pt-1 transition-transform duration-300 group-hover/btn:translate-x-1"
+                            aria-hidden="true"
                           />
                         </a>
                       </div>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons with better accessibility */}
           <button
             onClick={prevSlide}
-            className="group absolute top-1/2 left-4 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white"
-            aria-label="Previous blog post"
+            className="group absolute top-1/2 left-4 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
+            aria-label={`Previous article: ${blogPosts[currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1].title}`}
           >
             <ChevronLeft
               size={24}
               className="text-gray-700 transition-colors duration-300 group-hover:text-blue-600"
+              aria-hidden="true"
             />
           </button>
 
           <button
             onClick={nextSlide}
-            className="group absolute top-1/2 right-4 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white"
-            aria-label="Next blog post"
+            className="group absolute top-1/2 right-4 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
+            aria-label={`Next article: ${blogPosts[currentIndex === blogPosts.length - 1 ? 0 : currentIndex + 1].title}`}
           >
             <ChevronRight
               size={24}
               className="text-gray-700 transition-colors duration-300 group-hover:text-blue-600"
+              aria-hidden="true"
             />
           </button>
 
-          {/* Dot Indicators */}
-          <div className="mt-8 flex justify-center gap-3">
-            {blogPosts.map((_, index) => (
+          {/* Dot Indicators with accessibility */}
+          <div
+            className="mt-8 flex justify-center gap-3"
+            role="tablist"
+            aria-label="Article navigation"
+          >
+            {blogPosts.map((post, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-3 w-3 rounded-full transition-all duration-500 ${
+                role="tab"
+                aria-selected={currentIndex === index}
+                aria-label={`Go to article ${index + 1}: ${post.title}`}
+                className={`h-3 w-3 rounded-full transition-all duration-500 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none ${
                   currentIndex === index
                     ? "bg-alpha w-8"
                     : "bg-gray-300 hover:bg-gray-400"
                 }`}
-                aria-label={`Go to blog post ${index + 1}`}
               />
             ))}
           </div>
@@ -237,9 +275,11 @@ const BlogCarousel = () => {
         <div className="mt-12 text-center">
           <a
             href="https://blog.runalpha.co"
-            className="font-inter to-alpha from-alpha/80 rounded-full bg-gradient-to-r px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="font-inter to-alpha from-alpha/80 inline-block rounded-full bg-gradient-to-r px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            View All Articles
+            View All Investment Articles
           </a>
         </div>
       </div>

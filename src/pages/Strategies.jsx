@@ -8,11 +8,10 @@ function Strategies() {
     <>
       {/* ✅ FIXED: Improved SEO with better title, description, keywords, and URL */}
       <SEO
-        title="Our Services - Investment & Wealth Management | RunAlpha"
-        description="Explore RunAlpha's comprehensive financial services including family office management, wealth planning, asset management, and investment advisory. Data-driven strategies tailored for Nigerian investors seeking sustainable growth and portfolio optimization."
-        keywords="investment services Nigeria, wealth management services, family office Lagos, asset management Nigeria, financial planning services, portfolio management, wealth advisory Nigeria"
+        title="Investment Services - Wealth Management, Portfolio Management & Financial Advisory | RunAlpha Lagos"
+        description="RunAlpha offers comprehensive investment services in Lagos, Nigeria: family office management, wealth planning, asset management, portfolio optimization, and financial advisory. Customized investment strategies for high-net-worth individuals seeking capital growth, risk management, and sustainable returns through data-driven portfolio analysis."
+        keywords="investment services Lagos Nigeria, wealth management services Nigeria, portfolio management Lagos, asset management services Nigeria, family office services Lagos, financial advisory services Nigeria, wealth planning Lagos, investment advisory Nigeria, capital management services"
         url="https://runalpha.co/offerings"
-        type="website"
       />
 
       {/* ✅ HeroSectionCard contains H1 */}

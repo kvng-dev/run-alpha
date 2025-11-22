@@ -72,7 +72,7 @@ const Navbar = () => {
             <img
               src="/logos/run-logo.svg"
               className={`${!scrolled && "mt-3"} w-20 text-black md:w-35`}
-              alt=""
+              alt="runalpha logo"
               style={{
                 filter: `${scrolled ? "invert(74%) sepia(59%) saturate(497%) hue-rotate(176deg) brightness(92%) contrast(100%)" : ""}`,
               }}

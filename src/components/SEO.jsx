@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet"; 
+import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
 const SEO = ({
@@ -46,13 +46,22 @@ const SEO = ({
     },
     name: "RunAlpha",
     alternateName: "Run Alpha",
-    description: "Leading financial advisory and investment management firm",
+    description:
+      "Leading financial advisory and investment management firm in Lagos, Nigeria",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "NG",
+      streetAddress: "1 Uwa Close, Off Billings Way, Oregun",
       addressLocality: "Lagos",
-      addressRegion: "Lagos",
+      addressRegion: "Lagos State",
+      addressCountry: "NG",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "6.5885",
+      longitude: "3.3606",
+    },
+    telephone: "+2349093717972",
+    email: "hello@runalpha.co",
     sameAs: [
       "https://www.linkedin.com/company/runalpha",
       "https://twitter.com/runalpha",
@@ -62,7 +71,13 @@ const SEO = ({
       "Financial Planning",
       "Wealth Management",
       "Financial Advisory",
+      "Portfolio Management",
+      "Asset Management",
     ],
+    areaServed: {
+      "@type": "Country",
+      name: "Nigeria",
+    },
   };
 
   // Website schema
@@ -77,6 +92,11 @@ const SEO = ({
       "@id": `${baseUrl}/#organization`,
     },
     inLanguage: "en-US",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${baseUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   };
 
   // WebPage schema
@@ -130,11 +150,12 @@ const SEO = ({
       <meta name="keywords" content={keywords} />
       <meta name="robots" content={robotsContent} />
       <meta name="author" content={author} />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {/* Canonical Link */}
       <link rel="canonical" href={canonicalUrl} />
 
-      {/* Open Graph Meta Tags */}
+      {/* Open Graph Meta Tags - ALL REQUIRED TAGS */}
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="RunAlpha" />
       <meta property="og:title" content={title} />
@@ -161,6 +182,12 @@ const SEO = ({
       <meta httpEquiv="content-language" content="en" />
       <meta name="geo.region" content="NG-LA" />
       <meta name="geo.placename" content="Lagos" />
+      <meta name="geo.position" content="6.5885;3.3606" />
+      <meta name="ICBM" content="6.5885, 3.3606" />
+
+      {/* Theme Color */}
+      <meta name="theme-color" content="#1e40af" />
+      <meta name="msapplication-TileColor" content="#1e40af" />
 
       {/* Structured Data - JSON-LD */}
       <script type="application/ld+json">

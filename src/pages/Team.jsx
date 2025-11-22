@@ -27,11 +27,10 @@ function Team() {
     <>
       {/* ✅ FIXED: Moved SEO outside and improved content */}
       <SEO
-        title="Our Team - Expert Financial Advisors | RunAlpha Nigeria"
-        description="Meet RunAlpha's team of experienced investment professionals and financial advisors. Over 36 years of cumulative experience in wealth management, portfolio management, and investment advisory in Lagos, Nigeria."
-        keywords="runalpha team, financial advisors Nigeria, investment professionals Lagos, wealth management experts, portfolio managers Nigeria"
+        title="Investment Team - Expert Financial Advisors & Portfolio Managers | RunAlpha Nigeria"
+        description="Meet RunAlpha's experienced investment professionals and financial advisors in Lagos, Nigeria. Our team brings 36+ years of cumulative expertise in wealth management, portfolio management, asset allocation, and investment advisory. Certified professionals dedicated to delivering exceptional results through data-driven strategies."
+        keywords="investment team Nigeria, financial advisors Lagos, portfolio managers Nigeria, wealth management experts Lagos, certified financial planners Nigeria, investment professionals Lagos, asset managers Nigeria, financial advisory team"
         url="https://runalpha.co/team"
-        type="website"
       />
 
       <section>

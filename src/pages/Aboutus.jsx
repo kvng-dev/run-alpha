@@ -8,11 +8,10 @@ const AboutUs = () => {
   return (
     <>
       <SEO
-        title="About RunAlpha - Leading Investment Advisory in Lagos, Nigeria"
-        description="RunAlpha is Nigeria's premier data-driven investment management and financial advisory firm. Learn about our commitment to delivering sustainable, risk-adjusted returns and wealth optimization for high-net-worth individuals."
-        keywords="about runalpha, investment advisory Nigeria, wealth management Lagos, financial advisory team, data-driven investing, Nigerian investment firm"
+        title="About RunAlpha - Nigeria's Premier Investment Management & Financial Advisory Firm in Lagos"
+        description="RunAlpha is a leading investment management and wealth advisory firm in Lagos, Nigeria. Since 2021, we've delivered data-driven portfolio strategies, risk-adjusted returns, and comprehensive wealth planning for high-net-worth individuals. Our expert team specializes in asset management, family office services, and sustainable investment solutions."
+        keywords="about RunAlpha, investment management firm Lagos, financial advisory Nigeria, wealth management company Lagos, asset management Nigeria, portfolio managers Lagos, financial advisors Nigeria, investment professionals, wealth planning experts, family office Nigeria"
         url="https://runalpha.co/aboutus"
-        type="website"
       />
 
       {/* Main content wrapper */}
