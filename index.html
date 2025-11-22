@@ -1,17 +1,45 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
-  <link rel="icon" type="image/png" href="/logos/run-logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Run Alpha</title>
-</head>
+    <!-- Basic Meta Tags - These will be overridden by react-helmet -->
+    <title>RunAlpha - Investment Advisory & Wealth Management</title>
+    <meta
+      name="description"
+      content="Expert investment management and financial advisory services in Lagos, Nigeria. Data-driven strategies for sustainable returns."
+    />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logos/run-logo.svg" />
+    <link rel="apple-touch-icon" href="/logos/run-logo.svg" />
 
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- REMOVE these - react-helmet will handle them -->
+    <!-- ❌ <meta property="og:image" content="%PUBLIC_URL%/logo.png" /> -->
+  </head>
+  <body>
+    <noscript>
+      <div
+        style="
+          text-align: center;
+          padding: 50px;
+          font-family: Arial, sans-serif;
+        "
+      >
+        <h1>JavaScript Required</h1>
+        <p>
+          This application requires JavaScript to run. Please enable JavaScript
+          in your browser.
+        </p>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

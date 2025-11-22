@@ -5,13 +5,21 @@ import SEO from "../components/SEO";
 
 function Strategies() {
   return (
-    <div className="relative w-full">
+    <>
+      {/* ✅ FIXED: Improved SEO with better title, description, keywords, and URL */}
       <SEO
-        title="Offerings | Our Offerings"
-        description="Run Alpha offers family office services, wealth planning, and asset management for Nigerian investors. Discover data-driven strategies built for your goals."
+        title="Our Services - Investment & Wealth Management | RunAlpha"
+        description="Explore RunAlpha's comprehensive financial services including family office management, wealth planning, asset management, and investment advisory. Data-driven strategies tailored for Nigerian investors seeking sustainable growth and portfolio optimization."
+        keywords="investment services Nigeria, wealth management services, family office Lagos, asset management Nigeria, financial planning services, portfolio management, wealth advisory Nigeria"
+        url="https://runalpha.co/offerings"
+        type="website"
       />
+
+      {/* ✅ HeroSectionCard contains H1 */}
       <HeroSectionCard data={heroSectionData.strategies} />
-      <div className="w-full">
+
+      {/* ✅ Strategy cards contain H2 headings */}
+      <div className="relative w-full">
         {strategiesData.map((strategy, index) => (
           <StrategyAnimatedCard
             key={index}
@@ -19,14 +27,13 @@ function Strategies() {
             description={strategy.description}
             image={strategy.image}
             services={strategy.services}
-            reverse={index % 2 == 0}
-            index={index} // Alternates layout
-            disclaimerButton={strategy.disclaimerButton} // Show disclaimer button if true
+            reverse={index % 2 === 0} // ✅ Fixed: Use === instead of ==
+            index={index}
+            disclaimerButton={strategy.disclaimerButton}
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
-
 export default Strategies;

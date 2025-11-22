@@ -6,25 +6,32 @@ import SEO from "../components/SEO";
 
 const AboutUs = () => {
   return (
-    <div className="relative w-full bg-[#F3F3F3]">
+    <>
       <SEO
-        title="About Us | Run Alpha - Nigeria's Data-Driven Investment Experts"
-        description="Run Alpha, Nigeria's data-driven investment management and financial advisory firm. Learn about our commitment to risk-adjusted returns and wealth optimization"
+        title="About RunAlpha - Leading Investment Advisory in Lagos, Nigeria"
+        description="RunAlpha is Nigeria's premier data-driven investment management and financial advisory firm. Learn about our commitment to delivering sustainable, risk-adjusted returns and wealth optimization for high-net-worth individuals."
+        keywords="about runalpha, investment advisory Nigeria, wealth management Lagos, financial advisory team, data-driven investing, Nigerian investment firm"
+        url="https://runalpha.co/aboutus"
+        type="website"
       />
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <HeroSectionCard data={heroSectionData.about} />
-      </motion.div>
 
-      <div className="">
-        {aboutSections.map((section, index) => (
-          <AboutCard key={index} {...section} reverse={index % 2 !== 0} />
-        ))}
+      {/* Main content wrapper */}
+      <div className="relative w-full bg-[#F3F3F3]">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <HeroSectionCard data={heroSectionData.about} />
+        </motion.div>
+
+        <div className="">
+          {aboutSections.map((section, index) => (
+            <AboutCard key={index} {...section} reverse={index % 2 !== 0} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default AboutUs;

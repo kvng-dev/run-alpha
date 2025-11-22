@@ -56,9 +56,9 @@ const StrategiesHomeSection = () => {
                         d="M29.39 14.527L17.474 2.609a2.085 2.085 0 0 0-2.946 0L2.609 14.527a2.085 2.085 0 0 0 0 2.946l11.918 11.918a2.085 2.085 0 0 0 2.946 0l11.918-11.918a2.085 2.085 0 0 0 0-2.946M16 28.036L3.965 16L16 3.964L28.036 16Z"
                       />
                     </svg>
-                    <h3 className="text-sm font-semibold text-[#ffca28] uppercase sm:text-base">
+                    <p className="text-sm font-semibold text-[#ffca28] uppercase sm:text-base">
                       {strategy.title}
-                    </h3>
+                    </p>
                   </div>
                   <p className="max-w-4xl text-center text-sm text-white md:text-base">
                     {strategy.description}

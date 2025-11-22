@@ -26,7 +26,7 @@ const StatisticsSection = () => {
         className="space-y-4 text-center md:text-start"
       >
         <p className="text-lg md:text-xl">Est. since</p>
-        <h3 className="text-3xl font-bold md:text-6xl">2021</h3>
+        <p className="text-3xl font-bold md:text-6xl">2021</p>
         <p className="max-w-xs text-base md:text-lg">
           Founded in 2021, we have crafted winning investment strategies that
           have demonstrated resilience, adaptability, and capital growth across

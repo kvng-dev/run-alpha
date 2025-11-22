@@ -15,7 +15,7 @@ function AboutUsHomeSection() {
       <div className="absolute top-0 left-0 z-1 h-full w-full bg-black/50" />
       <div className="relative z-10 flex justify-between gap-6 lg:gap-8">
         <div className="container mx-auto mb-16 flex flex-col items-start px-4 md:px-16 lg:px-28 xl:px-36">
-          <motion.h2
+          <motion.div
             variants={{
               visible: { y: 0, opacity: 1 },
               hidden: { y: "50%", opacity: 0 },
@@ -24,10 +24,11 @@ function AboutUsHomeSection() {
             animate={{ y: "0", opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }}
             whileInView="visible"
-            className="font-lora mb-8 text-4xl leading-snug font-medium text-white capitalize md:max-w-6xl md:text-6xl xl:text-7xl"
           >
-            About <span className="">Us</span>
-          </motion.h2>
+            <h2 className="font-lora mb-8 text-4xl leading-snug font-medium text-white capitalize md:max-w-6xl md:text-6xl xl:text-7xl">
+              About <span className="">Us</span>
+            </h2>
+          </motion.div>
           <motion.p
             variants={{
               visible: { x: 0, opacity: 1 },

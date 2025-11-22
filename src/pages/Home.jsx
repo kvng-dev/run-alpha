@@ -8,10 +8,13 @@ import BlogCarousel from "../features/home/BlogSection";
 
 function Home() {
   return (
-    <div className="">
+    <>
       <SEO
-        title="Run Alpha | Driven by Alpha"
-        description="Leading data-driven investment management & financial planning service in Africa. Achieve returns and wealth optimization with unique investment strategies."
+        title="RunAlpha - Leading Investment Advisory & Wealth Management in Lagos"
+        description="Expert investment management, financial planning, and wealth advisory services. Data-driven strategies for sustainable, risk-adjusted returns. Headquartered in Lagos, Nigeria."
+        keywords="investment management Nigeria, wealth management Lagos, financial advisory, hedge fund, portfolio management, fintech Nigeria"
+        url="https://runalpha.co"
+        type="website"
       />
       <LandingPage />
       <AboutUsHomeSection />
@@ -19,7 +22,7 @@ function Home() {
       <StrategiesHomeSection />
       <GetIntouch />
       <BlogCarousel />
-    </div>
+    </>
   );
 }
 

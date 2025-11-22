@@ -9,6 +9,7 @@ import AboutUs from "./pages/Aboutus";
 import Disclaimer from "./pages/Disclaimer";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 import HedgeFund from "./pages/HedgeFund";
+import TestSEO from "./pages/TestSEO";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="aboutus" element={<AboutUs />} />
         <Route path="services" element={<Strategies />} />
         <Route path="team" element={<Team />} />
+        <Route path="/test-seo" element={<TestSEO />} />
         <Route path="contact" element={<GetInTouch />} />
         <Route path="hedge-fund" element={<HedgeFund />} />
         <Route path="disclaimer" element={<Disclaimer />} />

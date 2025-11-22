@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import { motion } from "framer-motion";
 import HeroSectionCard from "../ui/HeroSectionCard";
@@ -8,9 +10,9 @@ import SEO from "../components/SEO";
 
 function ContactUs() {
   const audioRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    // Play the beep sound every second
     const intervalId = setInterval(() => {
       if (audioRef.current) {
         audioRef.current.play();
@@ -18,13 +20,55 @@ function ContactUs() {
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
+
+  // LocalBusiness Schema for better local SEO
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    name: "RunAlpha",
+    image: "https://runalpha.co/logos/run-logo.svg",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1 Uwa Close, Off Billings Way, Oregun",
+      addressLocality: "Lagos",
+      addressRegion: "Lagos State",
+      addressCountry: "NG",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "6.5885",
+      longitude: "3.3606",
+    },
+    telephone: "+2349093717972",
+    email: "hello@runalpha.co",
+    url: "https://runalpha.co",
+    openingHours: "Mo-Fr 09:00-17:00",
+    priceRange: "$$",
+    areaServed: {
+      "@type": "Country",
+      name: "Nigeria",
+    },
+  };
+
   return (
-    <div className="relative w-full bg-gray-200">
+    <>
       <SEO
-        title="Contact Us | Get In Touch"
-        description="We'd love to hear from you! Reach out to Run for inquiries, consultations, or collaborations."
+        title="Contact RunAlpha - Investment Advisory in Lagos, Nigeria"
+        description="Get in touch with RunAlpha's expert financial advisors. Schedule a consultation to discuss your investment goals and wealth management needs. Located at 1 Uwa Close, Oregun, Lagos."
+        keywords="contact runalpha, investment consultation Lagos, financial advisor contact Nigeria, wealth management consultation, runalpha office Lagos"
+        url="https://runalpha.co/contact"
+        type="website"
       />
+
+      {/* Additional LocalBusiness Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+      </Helmet>
+
       <motion.div
+        className="relative w-full bg-gray-200"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -46,56 +90,89 @@ function ContactUs() {
           viewport={{ once: true }}
         >
           <h2 className="text-alpha font-quicksand mb-4 text-2xl font-bold md:text-3xl">
-            Contact
+            Contact Us
           </h2>
 
           <p className="font-quicksand text-alpha mb-6 max-w-3xl md:text-lg">
-            Run Alpha is based in Lagos, Nigeria. We are always happy to hear
-            from you. Please reach out to us using the contact form below or
-            contact us at the email address or phone number provided.
+            RunAlpha is based in Lagos, Nigeria. We are always happy to hear
+            from you. Please reach out to us using the contact information below
+            to schedule a consultation or discuss your investment needs.
           </p>
 
-          <div className="space-y-4 text-base">
-            {/* Address */}
-            <div className="space-y-4">
-              <p className="text-alpha font-quicksand text-xl font-bold">
+          <div className="space-y-6 text-base">
+            {/* Address Section */}
+            <div className="space-y-3">
+              <h3 className="text-alpha font-quicksand text-xl font-bold">
                 Head Office
-              </p>
-              <motion.p
-                className="text-alpha font-quicksand flex flex-row items-start gap-2 md:text-lg"
-                whileHover={{ scale: 1.05 }}
+              </h3>
+              <motion.address
+                className="text-alpha font-quicksand flex flex-row items-start gap-2 not-italic md:text-lg"
+                whileHover={{ scale: 1.02 }}
               >
-                <MdLocationPin size={25} className="text-alpha" />1 Uwa Close,
-                Off Billings Way, Oregun, Lagos.
+                <MdLocationPin
+                  size={25}
+                  className="text-alpha mt-1 flex-shrink-0"
+                />
+                <span>
+                  1 Uwa Close, Off Billings Way,
+                  <br />
+                  Oregun, Lagos, Nigeria
+                </span>
+              </motion.address>
+            </div>
+
+            {/* Contact Details */}
+            <div className="space-y-3">
+              <h3 className="text-alpha font-quicksand text-xl font-bold">
+                Get In Touch
+              </h3>
+
+              <motion.p
+                className="text-alpha font-quicksand flex items-center gap-4 md:text-lg"
+                whileHover={{ scale: 1.02 }}
+              >
+                <span className="min-w-[3rem] font-semibold">Phone:</span>
+                <a
+                  className="transition-all hover:underline"
+                  href="tel:+2349093717972"
+                  aria-label="Call RunAlpha at +234 909 371 7972"
+                >
+                  +234 909 371 7972
+                </a>
+              </motion.p>
+
+              <motion.p
+                className="text-alpha font-quicksand flex items-center gap-4 md:text-lg"
+                whileHover={{ scale: 1.02 }}
+              >
+                <span className="min-w-[3rem] font-semibold">Email:</span>
+                <a
+                  className="transition-all hover:text-blue-600 hover:underline"
+                  href="mailto:hello@runalpha.co"
+                  aria-label="Email RunAlpha at hello@runalpha.co"
+                >
+                  hello@runalpha.co
+                </a>
               </motion.p>
             </div>
 
-            {/* Phone */}
-            <motion.p
-              className="text-alpha font-quicksand flex items-center gap-4 md:text-lg"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="">TEL:</div>
-              <a className="" href="tel:+2349093717972">
-                +234 909 371 7972
-              </a>
-            </motion.p>
-            <motion.p
-              className="text-alpha font-quicksand flex items-center gap-4 md:text-lg"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="">E:</div>
-              <a className="underline" href="mailto:info@example.com">
-                hello@runalpha.co
-              </a>
-            </motion.p>
+            {/* Business Hours */}
+            <div className="space-y-3 border-t border-gray-300 pt-4">
+              <h3 className="text-alpha font-quicksand text-xl font-bold">
+                Business Hours
+              </h3>
+              <p className="text-alpha font-quicksand md:text-lg">
+                Monday - Friday: 9:00 AM - 5:00 PM
+                <br />
+                Saturday - Sunday: Closed
+              </p>
+            </div>
           </div>
         </motion.div>
       </motion.div>
-      <div />
 
       <Toaster position="top-right" reverseOrder={false} />
-    </div>
+    </>
   );
 }
 
