@@ -1,42 +1,62 @@
 import { motion } from "framer-motion";
-import { fadeInLeft, fadeInRight } from "../../utilities/animations";
 import { Link } from "react-router-dom";
 
+const fadeUp = {
+  hidden: { y: 30, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
 // eslint-disable-next-line react/prop-types
-const AboutCard = ({ title, text, imageUrl, reverse, linkUrl }) => (
-  <div className={` ${reverse ? "flex-row-reverse bg-gray-200" : ""} `}>
-    <div className="container mx-auto mb-0 flex flex-wrap items-center gap-8 px-4 py-8 md:px-16 md:py-12 lg:flex-nowrap lg:gap-24 lg:px-28 lg:py-24 xl:px-36">
+const AboutCard = ({ title, text, imageUrl, reverse, linkUrl, index = 0 }) => (
+  <section className={reverse ? "bg-gray-100" : "bg-white"}>
+    <motion.div
+      className={`mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:gap-16 lg:py-24 ${
+        reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+      }`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.15 } },
+      }}
+    >
+      {/* Text */}
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInRight}
-        className="min-w-1/2 space-y-3"
+        className="flex-1 space-y-5"
+        variants={fadeUp}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="font-lora text-alpha mb-8 text-2xl font-bold capitalize md:text-3xl">
+        <span className="text-secondary font-quicksand text-sm font-semibold tracking-widest uppercase">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <h2 className="font-lora text-alpha text-2xl font-bold md:text-3xl lg:text-4xl">
           {title}
         </h2>
-        <p className="font-quicksand text-base leading-8 xl:text-lg">{text}</p>
+        <p className="font-quicksand max-w-xl text-base leading-relaxed text-gray-600 lg:text-lg">
+          {text}
+        </p>
       </motion.div>
-      <div
-        className={`${reverse ? "2xl:pr-" : "2xl:pl-"} flex items-center px-0 xl:h-[500px]`}
-      >
-        {linkUrl && (
-          <Link to={linkUrl}>
-            <motion.img
+
+      {/* Image */}
+      {linkUrl && (
+        <motion.div
+          className="flex-1"
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Link to={linkUrl} className="group block overflow-hidden rounded-2xl">
+            <img
               src={imageUrl}
               alt={title}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}
-              className="mb-6 rounded-2xl object-contain shadow-lg"
+              className="h-auto w-full rounded-2xl object-cover shadow-lg transition-transform duration-700 group-hover:scale-105 lg:h-[420px]"
+              loading="lazy"
             />
           </Link>
-        )}
-      </div>
-    </div>
-  </div>
+        </motion.div>
+      )}
+    </motion.div>
+  </section>
 );
 
 export default AboutCard;

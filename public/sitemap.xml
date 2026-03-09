@@ -1,33 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://runalpha.co/</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://runalpha.co/logos/RUN%20ALPHA%20Logo%20-%20Black%20with%20White%20Background%20-%205000x5000.png</image:loc>
+      <image:title>RunAlpha - Investment Advisory and Wealth Management</image:title>
+      <image:caption>RunAlpha official logo - Leading investment management firm in Lagos, Nigeria</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/logos/run-logo.svg</image:loc>
+      <image:title>RunAlpha Logo</image:title>
+      <image:caption>RunAlpha financial services brand logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://runalpha.co/aboutus</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://runalpha.co/about/pexels-filipgrobgaard-28426645.jpg</image:loc>
+      <image:title>RunAlpha About - Data-Driven Investment Management</image:title>
+      <image:caption>RunAlpha investment management team and operations in Lagos, Nigeria</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/two-african-businessman-sitting-outside-cafe.jpg</image:loc>
+      <image:title>RunAlpha - Trusted by Investors</image:title>
+      <image:caption>RunAlpha professionals providing investment advisory services</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://runalpha.co/services</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://runalpha.co/pexels-rdne-7951553.jpg</image:loc>
+      <image:title>Family Office Services - RunAlpha</image:title>
+      <image:caption>RunAlpha family office wealth management and estate planning services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/pexels-pixabay-235990.jpg</image:loc>
+      <image:title>Private Wealth Management - RunAlpha</image:title>
+      <image:caption>RunAlpha private wealth management for high-net-worth individuals</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/pexels-rickyrecap-2295433.jpg</image:loc>
+      <image:title>Hedge Fund Investment - RunAlpha</image:title>
+      <image:caption>RunAlpha hedge fund investment opportunities and strategies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/pexels-pixabay-210600.jpg</image:loc>
+      <image:title>FX Currency Solutions - RunAlpha</image:title>
+      <image:caption>RunAlpha foreign exchange currency risk management solutions</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://runalpha.co/team</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://runalpha.co/team-assets/Picture3.jpg</image:loc>
+      <image:title>Ajoke Toluwaloju - Head Fund Management RunAlpha</image:title>
+      <image:caption>Ajoke Toluwaloju, Head of Fund Management at RunAlpha Lagos Nigeria</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/team-assets/Picture1.jpg</image:loc>
+      <image:title>Ayooluwade Ogunwale - Head Fixed Income RunAlpha</image:title>
+      <image:caption>Ayooluwade Ogunwale, Head of Fixed Income and Macro Strategy at RunAlpha</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/team-assets/Picture4.jpg</image:loc>
+      <image:title>Reanat Adamson - Head Finance RunAlpha</image:title>
+      <image:caption>Reanat Adamson, Head of Finance at RunAlpha</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/team-assets/Picture2.jpg</image:loc>
+      <image:title>Folashade Adedun - Head Risk Management RunAlpha</image:title>
+      <image:caption>Folashade Adedun, Head of Risk Management at RunAlpha</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://runalpha.co/team-assets/Picture6.png</image:loc>
+      <image:title>Tochukwu Njoku - Head Business Development RunAlpha</image:title>
+      <image:caption>Tochukwu Njoku, Head of Business Development at RunAlpha</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://runalpha.co/contact</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://runalpha.co/hedge-fund</loc>
-    <lastmod>2025-09-21T00:00:00.000Z</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://runalpha.co/disclaimer</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://runalpha.co/privacy-policy</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

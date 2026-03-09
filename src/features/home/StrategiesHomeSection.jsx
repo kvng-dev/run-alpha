@@ -1,74 +1,88 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { strategies } from "../../data/data";
 import { motion } from "framer-motion";
+import { BsArrowRight } from "react-icons/bs";
+
+const fadeUp = {
+  hidden: { y: 24, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
 const StrategiesHomeSection = () => {
-  const navigate = useNavigate();
-
-  const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page
-    navigate("/offerings"); // Navigates to the /aboutus route
-  };
   return (
-    <section className="bg-alpha max-w-screen pt-32 text-center">
-      <h2 className="font-lora mx-auto mb-12 py-2 text-3xl font-semibold text-white capitalize md:text-4xl xl:text-5xl">
-        Business Offerings
-      </h2>
-      <div className="flex flex-col">
-        {strategies.map((strategy, index) => (
-          <button
-            onClick={handleScrollToTop}
-            to={`/offerings`}
-            key={strategy.id}
-          >
+    <section className="bg-white py-20 md:py-28">
+      <motion.div
+        className="mx-auto max-w-7xl px-6 md:px-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.12 } },
+        }}
+      >
+        {/* Section header */}
+        <motion.div
+          className="mb-14 text-center"
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <div className="bg-secondary h-[2px] w-8 rounded-full" />
+            <span className="font-quicksand text-secondary text-sm font-semibold tracking-widest uppercase">
+              What We Offer
+            </span>
+            <div className="bg-secondary h-[2px] w-8 rounded-full" />
+          </div>
+          <h2 className="font-lora text-alpha text-3xl font-bold md:text-4xl lg:text-5xl">
+            Business Offerings
+          </h2>
+        </motion.div>
+
+        {/* Strategy cards grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {strategies.map((strategy, index) => (
             <motion.div
-              // to={`/strategies/${strategy.id}`}
-              key={index}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 1 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-                delay: index * 0.4,
-              }}
-              className="group relative h-[350px] border-b border-gray-600 duration-300 ease-in-out hover:h-[450px]"
+              key={strategy.id}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              {/* Image */}
-              <div className="bg-alpha/30 absolute top-0 left-0 z-5 h-full w-full transition-opacity duration-300 group-hover:opacity-0 md:backdrop-blur-xs" />
-              <img
-                src={strategy.image}
-                alt={strategy.title}
-                className="h-full w-full object-cover object-[50%_30%] transition-opacity duration-800 group-hover:opacity-100"
-              />
-              {/* Title and Icon */}
-              <div className="bg-opacity-30 absolute -top-8 right-11 z-10 flex w-full items-end rounded-lg p-4 md:top-[20%] md:right-[30%] md:w-[60%] lg:top-[30%] lg:right-[29%] lg:w-[600px] 2xl:right-[40%]">
-                <div className="bg-alpha font-quicksand absolute top-38 left-1/4 flex flex-col items-center gap-4 rounded px-4 py-3 opacity-100 shadow-2xl transition-all duration-1000 group-hover:opacity-100 sm:left-1/3 sm:gap-8 md:top-[50%] md:left-50 md:px-8 md:opacity-0 md:group-hover:left-[30%]">
-                  <div className="flex items-center gap-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      viewBox="0 0 32 32"
-                    >
-                      <path fill="#ffca28" d="m8 16l8-8l8 8l-8 8z" />
-                      <path
-                        fill="#ffca28"
-                        d="M29.39 14.527L17.474 2.609a2.085 2.085 0 0 0-2.946 0L2.609 14.527a2.085 2.085 0 0 0 0 2.946l11.918 11.918a2.085 2.085 0 0 0 2.946 0l11.918-11.918a2.085 2.085 0 0 0 0-2.946M16 28.036L3.965 16L16 3.964L28.036 16Z"
-                      />
-                    </svg>
-                    <p className="text-sm font-semibold text-[#ffca28] uppercase sm:text-base">
-                      {strategy.title}
-                    </p>
-                  </div>
-                  <p className="max-w-4xl text-center text-sm text-white md:text-base">
+              <Link
+                to="/services"
+                className="group relative block h-[400px] overflow-hidden rounded-2xl md:h-[450px]"
+              >
+                {/* Image */}
+                <img
+                  src={strategy.image}
+                  alt={strategy.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-500 group-hover:from-black/90" />
+
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                  <span className="font-quicksand text-secondary mb-2 text-xs font-semibold tracking-widest uppercase">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-lora mb-2 text-2xl font-bold text-white md:text-3xl">
+                    {strategy.title}
+                  </h3>
+                  <p className="font-quicksand mb-4 line-clamp-3 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
                     {strategy.description}
                   </p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-white transition-all duration-300 group-hover:gap-3">
+                    <span className="font-quicksand">Learn more</span>
+                    <BsArrowRight size={16} />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
-          </button>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,36 +1,84 @@
 import { motion } from "framer-motion";
 
+const fadeUp = {
+  hidden: { y: 30, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
 // eslint-disable-next-line react/prop-types
 const HeroSectionCard = ({ data: { backgroundImage, description, title } }) => {
   return (
     <div
-      className="relative h-[400px] w-full bg-cover bg-center text-center sm:h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh]"
+      className="relative h-[400px] w-full overflow-hidden bg-cover bg-center text-center sm:h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
+      role="img"
+      aria-label={`${title} - RunAlpha ${description.substring(0, 100)}`}
     >
-      {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 z-6 h-full w-full bg-black opacity-50" />
+      {/* Hidden img for Google Images indexing */}
+      <img
+        src={backgroundImage}
+        alt={`${title} - RunAlpha investment advisory services in Lagos Nigeria`}
+        className="sr-only"
+        width="1200"
+        height="630"
+        loading="eager"
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 z-6 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
       {/* Content */}
-      <div className="absolute top-0 left-0 z-8 flex h-full w-full flex-col items-center justify-center text-white sm:px-6 md:px-12 lg:px-16">
+      <motion.div
+        className="absolute inset-0 z-8 flex flex-col items-center justify-center px-6 md:px-12 lg:px-16"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.2 } },
+        }}
+      >
+        {/* Accent line */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bg-secondary mb-6 h-[3px] w-12 rounded-full"
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        />
+
+        <motion.h1
+          className="font-quicksand mb-6 max-w-5xl text-3xl font-extrabold text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+          variants={fadeUp}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <h1 className="font-quicksand mb-6 text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            {title}
-          </h1>
-        </motion.div>
+          {title}
+        </motion.h1>
 
         <motion.p
-          className="font-quicksand px-4 text-sm leading-9 sm:max-w-2xl sm:text-base md:max-w-3xl md:text-lg lg:text-xl xl:text-2xl"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          className="font-quicksand max-w-3xl text-sm leading-relaxed text-white/80 sm:text-base md:text-lg lg:text-xl"
+          variants={fadeUp}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {description}
         </motion.p>
-      </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          variants={fadeUp}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <motion.div
+            className="flex h-9 w-5 items-start justify-center rounded-full border-2 border-white/30 p-1"
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <motion.div
+              className="h-2 w-1 rounded-full bg-white/70"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

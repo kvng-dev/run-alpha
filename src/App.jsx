@@ -4,7 +4,7 @@ import Strategies from "./pages/Strategies";
 import GetInTouch from "./pages/ContactUs";
 import Applayout from "./ui/Applayout";
 import Team from "./pages/Team";
-import PageNotFound from "./pages/PageNotFound";
+import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/Aboutus";
 import Disclaimer from "./pages/Disclaimer";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy";
@@ -44,7 +44,7 @@ function App() {
         <Route path="team/" element={<Navigate to="/team" replace />} /> */}
 
         {/* 404 - Must be last */}
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

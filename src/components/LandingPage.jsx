@@ -1,47 +1,111 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
+
+const fadeUp = {
+  hidden: { y: 30, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
 export default function LandingPage() {
   return (
-    <div className="relative h-[800px] w-full max-w-screen shadow-2xl lg:h-dvh">
+    <div className="relative h-[800px] w-full max-w-screen lg:h-dvh">
+      {/* Video background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 -z-10 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/5224-183786646.mp4" type="video/mp4" />
       </video>
-      <div className="absolute top-0 left-0 -z-5 h-full w-full bg-black opacity-20" />
-      <div className="z-20 container mx-auto flex h-full flex-col items-start justify-center gap-6 px-4 tracking-wider text-white md:px-16 lg:px-28 xl:px-36">
-        <div className="space-y-3 pt-48">
-          <p className="font-quicksand text-xl font-bold md:text-3xl xl:text-4xl">
-            Run Alpha
-          </p>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+
+      {/* Content */}
+      <motion.div
+        className="relative z-10 container mx-auto flex h-full flex-col items-start justify-center px-6 tracking-wider text-white md:px-16 lg:px-28 xl:px-36"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.25 } },
+        }}
+      >
+        <div className="max-w-4xl space-y-6 pt-24">
+          {/* Accent line + label */}
           <motion.div
-            initial={{ y: "50%", opacity: 0 }}
-            animate={{ y: "0", opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }}
+            className="flex items-center gap-3"
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="font-quicksand max-w-sm text-3xl leading-8 font-bold sm:text-4xl sm:leading-[1.2] md:max-w-[1300px] md:text-5xl lg:max-w-4xl lg:text-6xl">
-              Your Reliable <span className="text-secondary">Partner</span>{" "}
-              <br />
-              For Investment <br />
-              Advisory
-            </h1>
+            <div className="bg-secondary h-[2px] w-10 rounded-full" />
+            <p className="font-quicksand text-secondary text-sm font-semibold tracking-widest uppercase">
+              Run Alpha
+            </p>
           </motion.div>
 
-          <motion.p
-            className="font-quicksand flex flex-row gap-2 text-2xl text-[1.15rem] leading-6 font-semibold text-nowrap text-white sm:leading-none md:text-3xl lg:text-4xl"
-            initial={{ y: "100%", opacity: 0 }} // Start off-screen to the right with no opacity
-            animate={{ y: "0", opacity: 1 }} // Move to the normal position with full opacity
-            transition={{ duration: 1.6, ease: "easeInOut", delay: 0.4 }} // Duration, easing, and delay
+          {/* Heading */}
+          <motion.h1
+            className="font-quicksand max-w-sm text-4xl leading-[1.1] font-bold sm:max-w-xl sm:text-5xl md:max-w-3xl md:text-6xl lg:max-w-5xl lg:text-7xl"
+            variants={fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="text-secondary">Driven by Alpha,</span>
-            <span className="">Powered by Data</span>
+            Your Reliable Family Office and{" "}
+            <span className="text-secondary">Private Wealth</span>{" "}
+            Partner in Nigeria
+          </motion.h1>
+
+          {/* Tagline */}
+          <motion.p
+            className="font-quicksand text-lg font-medium text-white/80 sm:text-xl md:text-2xl"
+            variants={fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <span className="text-secondary">Driven by Alpha,</span>{" "}
+            Powered by Data
           </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <Link
+              to="/services"
+              className="font-quicksand group mt-2 inline-flex items-center gap-3 rounded-full border-2 border-white/30 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10 sm:text-base"
+            >
+              Explore our services
+              <BsArrowRight
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                size={18}
+              />
+            </Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+      >
+        <motion.div
+          className="flex h-9 w-5 items-start justify-center rounded-full border-2 border-white/30 p-1"
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <motion.div
+            className="h-2 w-1 rounded-full bg-white/70"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

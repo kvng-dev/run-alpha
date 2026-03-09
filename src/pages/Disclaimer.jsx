@@ -1,5 +1,60 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import SEO from "../components/SEO";
+
+const fadeUp = {
+  hidden: { y: 24, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
+const sections = [
+  {
+    number: "1",
+    title: "Online Access and Terms of Use Agreement",
+    body: `Welcome to Run Alpha's website. By clicking "accept" and accessing this website (the "Site"), you agree that your access to and use of the Site, including any text, images, graphics, user interfaces, information, data, tools, products, services, software, code, and other content (collectively, the "Content") provided by Run Alpha shall be exclusively governed by the terms and conditions set forth in this Online Access and Terms of Use Agreement (the "Agreement"). You should read the terms and conditions of this Agreement carefully, as your access and use of the Site are expressly conditioned upon your acceptance of these terms. Run Alpha may refuse access to and usage of the Site to anyone at any time, in its sole discretion.`,
+  },
+  {
+    number: "2",
+    title: "Purpose of the Site: No Offer of Securities; No Advice",
+    body: "The Site is intended to provide an overview of Run Alpha and its products, and is for general information purposes only. The Site is not intended to provide investment, accounting, tax, or legal advice. You should consult your own investment, legal and/or tax professionals regarding your specific situation.",
+  },
+  {
+    number: "3",
+    title: "Summary of Risk Factors",
+    body: `Investments in hedge funds and other investment funds, including those managed by Run Alpha and such funds' investments in any other funds (collectively, the "Funds"), are speculative and involve a high degree of risk and are intended only for experienced and sophisticated investors.`,
+  },
+  {
+    number: "4",
+    title: "Confidentiality, Intellectual Property Rights",
+    body: "Run Alpha owns and maintains this Site. The Content is the intellectual property of Run Alpha. Nothing at this Site shall be construed as granting by implication, estoppel, or otherwise any license or right to use any of the Content of the Site.",
+  },
+  {
+    number: "5",
+    title: "Disclaimers",
+    body: `The Site is operated by Run Alpha on an "AS IS," "AS AVAILABLE" basis, without representations or warranties of any kind. Run Alpha disclaims any and all representations and warranties with respect to this Site and its content, whether express, implied, or statutory.`,
+  },
+  {
+    number: "6",
+    title: "Limitation of Liability",
+    body: "Under no circumstances, shall Run Alpha and its affiliates or any of their employees, directors, officers, agents, vendors, or suppliers be liable for any direct or indirect losses or damages arising out of or in connection with the use of or inability to use the Site.",
+  },
+  {
+    number: "7",
+    title: "No Endorsements",
+    body: "References on the Site to any names, marks, products, or services of third parties or hypertext links to third-party sites or information do not constitute or imply an endorsement by Run Alpha.",
+  },
+  {
+    number: "8",
+    title: "Monitoring the Site",
+    body: "Run Alpha reserves the right to monitor and record activity on the Site at its sole discretion and may report any activity that it suspects may violate any law or regulation as it deems appropriate.",
+  },
+  {
+    number: "9",
+    title: "Governing Law",
+    body: "This Agreement (including non-contractual disputes or claims) shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria.",
+  },
+];
 
 const Disclaimer = () => {
   const [accepted, setAccepted] = useState(false);
@@ -14,127 +69,103 @@ const Disclaimer = () => {
   };
 
   return (
-    <div className="font-quicksand bg-black/20">
-      <div className="mx-start px-8 py-32 text-gray-700 md:px-34 xl:max-w-7xl xl:px-48">
-        <h1 className="mb-6 text-3xl font-bold">Disclaimer</h1>
+    <>
+      <SEO
+        title="Disclaimer - Terms of Use | RunAlpha Investment Advisory Lagos Nigeria"
+        description="Read RunAlpha's disclaimer and terms of use agreement. Understand the risks, limitations, and legal terms associated with accessing Run Alpha's investment management services and website content."
+        keywords="RunAlpha disclaimer, terms of use, investment risk disclosure, hedge fund disclaimer Nigeria, financial advisory terms Lagos"
+      />
 
-        <section className="mb-6">
-          {/* [Your existing disclaimer content here] */}
+      <div className="bg-alpha/5 min-h-screen">
+        {/* Header band */}
+        <div className="bg-alpha pt-32 pb-16">
+          <div className="mx-auto max-w-4xl px-6 md:px-12">
+            <motion.h1
+              className="font-lora text-4xl font-bold text-white md:text-5xl"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              Disclaimer
+            </motion.h1>
+            <motion.p
+              className="font-quicksand mt-4 max-w-2xl text-lg text-white/70"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            >
+              Please read our terms of use agreement carefully before proceeding.
+            </motion.p>
+          </div>
+        </div>
 
-          <h2 className="text-2xl font-semibold">
-            Online Access and Terms of Use Agreement
-          </h2>
-          <p className="text-base">
-            Welcome to Run Alpha’s website. By clicking “accept” and accessing
-            this website (the "Site"), you agree that your access to and use of
-            the Site, including any text, images, graphics, user interfaces,
-            information, data, tools, products, services, software, code, and
-            other content (collectively, the "Content") provided by Run Alpha
-            shall be exclusively governed by the terms and conditions set forth
-            in this Online Access and Terms of Use Agreement (the "Agreement").
-            You should read the terms and conditions of this Agreement
-            carefully, as your access and use of the Site are expressly
-            conditioned upon your acceptance of these terms. Run Alpha may
-            refuse access to and usage of the Site to anyone at any time, in its
-            sole discretion.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">
-            2. Purpose of the Site: No Offer of Securities; No Advice
-          </h3>
-          <p className="text-base">
-            The Site is intended to provide an overview of Run Alpha and its
-            products, and is for general information purposes only. The Site is
-            not intended to provide investment, accounting, tax, or legal
-            advice. You should consult your own investment, legal and/or tax
-            professionals regarding your specific situation.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">
-            3. Summary of Risk Factors
-          </h3>
-          <p className="text-base">
-            Investments in hedge funds and other investment funds, including
-            those managed by Run Alpha and such funds' investments in any other
-            funds (collectively, the "Funds"), are speculative and involve a
-            high degree of risk and are intended only for experienced and
-            sophisticated investors.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">
-            4. Confidentiality, Intellectual Property Rights
-          </h3>
-          <p className="text-base">
-            Run Alpha owns and maintains this Site. The Content is the
-            intellectual property of Run Alpha. Nothing at this Site shall be
-            construed as granting by implication, estoppel, or otherwise any
-            license or right to use any of the Content of the Site.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">5. Disclaimers</h3>
-          <p className="text-base">
-            The Site is operated by Run Alpha on an "AS IS," "AS AVAILABLE"
-            basis, without representations or warranties of any kind. Run Alpha
-            disclaims any and all representations and warranties with respect to
-            this Site and its content, whether express, implied, or statutory.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">
-            6. Limitation of Liability
-          </h3>
-          <p className="text-base">
-            Under no circumstances, shall Run Alpha and its affiliates or any of
-            their employees, directors, officers, agents, vendors, or suppliers
-            be liable for any direct or indirect losses or damages arising out
-            of or in connection with the use of or inability to use the Site.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">7. No Endorsements</h3>
-          <p className="text-base">
-            References on the Site to any names, marks, products, or services of
-            third parties or hypertext links to third-party sites or information
-            do not constitute or imply an endorsement by Run Alpha.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">8. Monitoring the Site</h3>
-          <p className="text-base">
-            Run Alpha reserves the right to monitor and record activity on the
-            Site at its sole discretion and may report any activity that it
-            suspects may violate any law or regulation as it deems appropriate.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">9. Law</h3>
-          <p className="text-base">
-            This Agreement (including non-contractual disputes or claims) shall
-            be governed by and construed in accordance with the laws of the
-            Federal Republic of Nigeria.
-          </p>
-
-          <h3 className="mt-4 text-xl font-semibold">
-            Please read and accept the disclaimer to proceed
-          </h3>
-
-          <div className="mt-4 flex items-center">
-            <input
-              type="checkbox"
-              id="accept"
-              className="mr-2"
-              checked={accepted}
-              onChange={handleAcceptance}
-            />
-            <label htmlFor="accept" className="text-base">
-              I accept the terms of the disclaimer.
-            </label>
+        {/* Content */}
+        <motion.div
+          className="mx-auto max-w-4xl px-6 py-16 md:px-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.08 } },
+          }}
+        >
+          <div className="space-y-8">
+            {sections.map((section) => (
+              <motion.div
+                key={section.number}
+                className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:p-8"
+                variants={fadeUp}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <div className="mb-3 flex items-baseline gap-3">
+                  <span className="bg-alpha/10 text-alpha flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                    {section.number}
+                  </span>
+                  <h2 className="font-lora text-alpha text-xl font-semibold md:text-2xl">
+                    {section.title}
+                  </h2>
+                </div>
+                <p className="font-quicksand leading-relaxed text-gray-600">
+                  {section.body}
+                </p>
+              </motion.div>
+            ))}
           </div>
 
-          {!accepted && (
-            <p className="mt-2 text-sm text-red-600">
-              You must accept the terms to proceed.
+          {/* Acceptance card */}
+          <motion.div
+            className="mt-12 rounded-xl border-2 border-dashed border-gray-200 bg-white p-8 text-center"
+            variants={fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <p className="font-quicksand text-alpha mb-6 text-lg font-semibold">
+              Please read and accept the disclaimer to proceed
             </p>
-          )}
-        </section>
+            <label
+              htmlFor="accept"
+              className="font-quicksand inline-flex cursor-pointer items-center gap-3 rounded-lg border border-gray-200 px-6 py-4 transition-all duration-300 select-none hover:border-secondary hover:bg-secondary/5"
+            >
+              <input
+                type="checkbox"
+                id="accept"
+                checked={accepted}
+                onChange={handleAcceptance}
+                className="text-secondary focus:ring-secondary h-5 w-5 rounded border-gray-300"
+              />
+              <span className="text-gray-700">
+                I accept the terms of the disclaimer.
+              </span>
+            </label>
+            {!accepted && (
+              <p className="mt-4 text-sm text-gray-400">
+                You must accept the terms to proceed.
+              </p>
+            )}
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </>
   );
 };
 

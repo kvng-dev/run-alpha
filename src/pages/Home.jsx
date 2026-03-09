@@ -11,10 +11,9 @@ function Home() {
   return (
     <>
       <SEO
-        title="Investment Management & Wealth Advisory in Lagos Nigeria | RunAlpha Financial Services"
-        description="RunAlpha offers expert investment management, wealth planning, and financial advisory services in Lagos, Nigeria. Data-driven portfolio strategies for sustainable returns, risk management, and capital growth. Trusted by high-net-worth individuals since 2021."
-        keywords="investment management Lagos Nigeria, wealth management services Nigeria, financial advisory Lagos, portfolio management Nigeria, asset management Lagos, hedge fund Nigeria, family office services, wealth planning Nigeria, capital growth strategies, risk-adjusted returns"
-        url="https://runalpha.co"
+        title="Private Wealth Management & Family Office Lagos | RunAlpha"
+        description="Leading independent family office and wealth management firm in Lagos. Private wealth management and family office services for high-net-worth families in Nigeria. Book today."
+        keywords="private wealth management Lagos, family office Lagos, family office services Lagos, wealth management firms Lagos, independent wealth advisor Lagos, boutique wealth management Lagos, high net worth wealth management Lagos"
       />
       <LandingPage />
       <AboutUsHomeSection />
@@ -30,7 +29,8 @@ function Home() {
           <p className="font-quicksand mx-auto mb-8 max-w-3xl text-center text-lg text-gray-700">
             Stay informed with insights from leading financial institutions and
             regulatory bodies. Understanding global markets and local
-            regulations is crucial for successful investing in Nigeria.
+            regulations is crucial for successful wealth management and
+            investing in Nigeria.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

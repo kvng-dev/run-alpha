@@ -2,12 +2,22 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
+const PAGE_NAMES = {
+  "/": "Home",
+  "/aboutus": "About Us",
+  "/services": "Services",
+  "/team": "Team",
+  "/contact": "Contact",
+  "/hedge-fund": "Hedge Fund",
+  "/disclaimer": "Disclaimer",
+  "/privacy-policy": "Privacy Policy",
+};
+
 const SEO = ({
   title,
   description,
   keywords = "financial strategy, hedge fund, innovation, investments, wealth management, fintech, sustainable investments, financial solutions, portfolio management",
-  url = "https://runalpha.co",
-  image = "/team-assets/pexels-vanessa-loring-5082960.jpg",
+  image = "/logos/RUN%20ALPHA%20Logo%20-%20Black%20with%20White%20Background%20-%205000x5000.png",
   logo = "/logos/run-logo.svg",
   type = "website",
   noIndex = false,
@@ -17,13 +27,12 @@ const SEO = ({
   modifiedDate,
 }) => {
   const location = useLocation();
+  const baseUrl = "https://runalpha.co";
 
-  // Ensure we have title and description
   if (!title || !description) {
     console.warn("SEO: title and description are required");
   }
 
-  const baseUrl = url.replace(/\/$/, "");
   const cleanPathname =
     location.pathname === "/" ? "/" : location.pathname.replace(/\/$/, "");
   const canonicalUrl =
@@ -31,6 +40,7 @@ const SEO = ({
   const fullImageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`;
   const fullLogoUrl = logo.startsWith("http") ? logo : `${baseUrl}${logo}`;
   const robotsContent = `${noIndex ? "noindex" : "index"},${noFollow ? "nofollow" : "follow"}`;
+  const imageType = fullImageUrl.endsWith(".png") || fullImageUrl.includes(".png") ? "image/png" : "image/jpeg";
 
   // Organization structured data
   const organizationSchema = {
@@ -62,9 +72,12 @@ const SEO = ({
     },
     telephone: "+2349093717972",
     email: "hello@runalpha.co",
+    image: fullImageUrl,
     sameAs: [
       "https://www.linkedin.com/company/runalpha",
       "https://twitter.com/runalpha",
+      "https://www.facebook.com/profile.php?id=61581323386413",
+      "https://www.instagram.com/runalpha.co/",
     ],
     serviceType: [
       "Investment Management",
@@ -78,6 +91,8 @@ const SEO = ({
       "@type": "Country",
       name: "Nigeria",
     },
+    openingHours: "Mo-Fr 09:00-17:00",
+    priceRange: "$$",
   };
 
   // Website schema
@@ -87,16 +102,11 @@ const SEO = ({
     "@id": `${baseUrl}/#website`,
     url: baseUrl,
     name: "RunAlpha",
-    description: "Leading financial advisory and investment management firm",
+    description: "Leading financial advisory and investment management firm in Lagos, Nigeria",
     publisher: {
       "@id": `${baseUrl}/#organization`,
     },
     inLanguage: "en-US",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${baseUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   // WebPage schema
@@ -124,18 +134,30 @@ const SEO = ({
     inLanguage: "en-US",
   };
 
-  // Breadcrumb schema
+  // Breadcrumb schema - dynamically includes current page
+  const breadcrumbItems = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: baseUrl,
+    },
+  ];
+
+  if (cleanPathname !== "/") {
+    const pageName = PAGE_NAMES[cleanPathname] || title;
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 2,
+      name: pageName,
+      item: canonicalUrl,
+    });
+  }
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: baseUrl,
-      },
-    ],
+    itemListElement: breadcrumbItems,
   };
 
   return (
@@ -150,8 +172,6 @@ const SEO = ({
       <meta name="keywords" content={keywords} />
       <meta name="robots" content={robotsContent} />
       <meta name="author" content={author} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       {/* Canonical Link */}
       <link rel="canonical" href={canonicalUrl} />
 
@@ -163,7 +183,7 @@ const SEO = ({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:secure_url" content={fullImageUrl} />
-      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:type" content={imageType} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />

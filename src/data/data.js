@@ -109,19 +109,19 @@ export const strategies = [
   {
     id: "family-office",
     title: "Family Office",
-    description: `Create lasting legacies and ensure seamless wealth transfer with our comprehensive family office services and financial planning to suit your needs.`,
+    description: `Create lasting legacies and ensure seamless wealth transfer with our comprehensive family office services in Lagos. We provide multi-family office solutions and financial planning tailored to high-net-worth families in Nigeria.`,
     image: "/pexels-rdne-7951553.jpg",
   },
   {
     id: "private-wealth",
     title: "Private Wealth",
-    description: `Experience personalized private wealth management and expert investment advisory designed exclusively for discerning high-net-worth individuals.`,
+    description: `Experience personalized private wealth management services and expert investment advisory designed exclusively for discerning high-net-worth individuals and entrepreneurs across Nigeria.`,
     image: "/pexels-pixabay-235990.jpg",
   },
   {
     id: "hedge-fund",
     title: "Hedge Fund",
-    description: `Diversify your portfolio and pursue enhanced risk-adjusted returns with our access to sophisticated hedge fund investment opportunities.`,
+    description: `Diversify your portfolio and pursue enhanced risk-adjusted returns with our access to sophisticated hedge fund investment opportunities and portfolio management services.`,
     image: "/pexels-rickyrecap-2295433.jpg",
   },
   {
@@ -170,13 +170,13 @@ export const heroSectionData = {
     title: "ABOUT US",
     backgroundImage: "/pexels.jpg",
     description:
-      "Headquartered in Lagos, Nigeria, a leading investment and financial advisory partner for discerning high-net-worth individuals in Africa and the diaspora, we believe the future of investment opportunities lies at the intersection of technology and human ingenuity. We strive to create a platform that empowers individuals to make informed decisions through data-driven investment strategies while fostering a culture of continuous learning and growth within our financial advisory services.",
+      "Run Alpha is an independent family office, private wealth advisory, and investment management firm serving discerning high-net-worth individuals and families across Africa and the diaspora. We believe the future of investment opportunities lies at the intersection of technology and human ingenuity. As one of the leading family offices in Lagos, Nigeria, we strive to create a platform that empowers families to make informed decisions through data-driven investment strategies while fostering a culture of continuous learning and growth within our wealth advisory and family office services.",
   },
   strategies: {
-    title: "OFFERINGS",
+    title: "Family Office and Private Wealth Management Services in Lagos",
     backgroundImage: "/skyline.jpg",
     description:
-      "Our offerings are built on data-driven insights, advanced algorithms, and expert analysis. We harness the power of artificial intelligence and machine learning to optimize risk management and investment opportunities, refining our strategies to provide comprehensive investment and financial advisory solutions in Africa.",
+      "Our family office and private wealth management services in Lagos are built on data-driven insights, advanced algorithms, and expert analysis. We harness the power of artificial intelligence and machine learning to optimize portfolio management, risk management, and leverage our expertise across tax and estate planning, philanthropy advisory, and legacy management to provide comprehensive financial advisory solutions for high-net-worth families and individuals in Nigeria and across Africa.",
   },
   teams: {
     title: "MEET OUR TEAM",
@@ -187,7 +187,8 @@ export const heroSectionData = {
   contact: {
     title: "Contact Us",
     backgroundImage: "/pexels-mart-production-7709242.jpg",
-    description: "Get Intouch with us today",
+    description:
+      "Have a question about our family office services, private wealth management, or investment strategies? We would love to hear from you. Reach out to our team in Lagos today.",
   },
 
   hedgefund: {
@@ -201,48 +202,45 @@ export const heroSectionData = {
 export const strategiesData = [
   {
     id: "family-office",
-    title: "Family Office",
+    title: "Family Office Services in Lagos",
     description: `
       The event that will go down in history as the most significant transfer of wealth is right around the corner.
       The great wealth transfer is happening. Globally, it is projected that baby boomers will transfer more than USD60 trillion in wealth to millennials over the course of the next decade.
       <br />
-      Beyond investment management, we provide an exclusive suite of family office services, ensuring a smooth transition of wealth to Millennials and Gen Z and aligning investment strategies with the family’s evolving investment preferences. Our services include:
+      Beyond investment management, we provide an exclusive suite of family office services in Lagos and Nigeria, ensuring a smooth transition of wealth and investment discipline to newer generations, aligning investment strategies with the family's evolving investment preferences. Our multi-family office services include:
     `,
     services: [
       {
         id: 1,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Wealth Planning and Preservation</span> – structuring portfolios for long-term financial security.</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Wealth Planning and Preservation</span> – structuring portfolios for long-term financial security and multi-generational wealth planning</p>`,
       },
       {
         id: 2,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Estate and Planning Succession</span> – ensuring seamless wealth transfer across
-    generations.</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Estate Planning and Succession Planning</span> – ensuring seamless wealth transfer across generations for families in Nigeria</p>`,
       },
       {
         id: 3,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Tax and Legal Coordination</span> – collaborating with top-tier professionals for optimal
-    financial efficiency.</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Tax and Legal Coordination</span> – collaborating with top-tier professionals for optimal financial efficiency</p>`,
       },
       {
         id: 4,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Philanthropy and Legacy Building</span> – setting common family values and crafting
-    strategies to align wealth with purpose.</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Philanthropy and Legacy Planning</span> – setting common family values and crafting strategies to align wealth with purpose</p>`,
       },
     ],
     image: "/pexels-rdne-7951553.jpg",
   },
   {
     id: "private-wealth",
-    title: "Private Wealth",
+    title: "Private Wealth Management",
     description: `
-      Your wealth is more than money. Our Private Wealth services are designed to help High-Net-Worth Individuals and Ultra High-Net-Worth Individuals navigate the complexities of wealth management with confidence, transparency, and clarity.
+      Your wealth is more than money. Our private wealth management services in Lagos, Nigeria, and the diaspora are designed to help high-net-worth individuals and ultra-high-net-worth individuals navigate the complexities of wealth management with confidence, transparency, and clarity.
       <br />
-      We provide personalized strategies that focus on liquidity management, financial planning, and long-term wealth preservation, ensuring that your financial resources are optimized for both immediate needs and future goals. We help clients develop:
+      As independent private wealth advisors in Lagos, Nigeria, we provide personalized strategies focused on portfolio management, liquidity management, estate planning, and long-term wealth preservation, ensuring your financial resources are optimized for both immediate needs and future goals. We help clients develop:
     `,
     services: [
       {
         id: 1,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Strategic Liquidity Management</span> – optimizing cash flow and liquidity to meet your immediate and future needs.</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify"><span class="font-bold">Strategic Portfolio Management and Liquidity Management</span> – optimizing cash flow, liquidity, and investment portfolios to meet your immediate and future needs.</p>`,
       },
       {
         id: 2,
@@ -276,14 +274,14 @@ export const strategiesData = [
     id: "fx-currency-solution",
     title: "FX Currency Solution",
     description: `
-      At <a href="/" class="text-secondary underline">Run Alpha,</a> we provide strategic foreign exchange (FX) solutions to help clients manage currency exposure, optimize international transactions, and hedge against market volatility.
+      At <a href="/" class="text-secondary underline">RunAlpha,</a> we provide strategic foreign exchange (FX) solutions to help clients in Lagos and across Nigeria manage currency exposure, optimize international transactions, and hedge against market volatility.
       <br />
       Whether you are an investor, business owner, or family office managing global wealth, our FX services are designed to enhance financial efficiency and mitigate currency risks. Our FX Currency Solutions include:
     `,
     services: [
       {
         id: 1,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify">Currency Risk Management</p> `,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify">Currency Risk Management</p>`,
       },
       {
         id: 2,
@@ -295,7 +293,7 @@ export const strategiesData = [
       },
       {
         id: 4,
-        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify">Cross-border transactions facilitation</p>`,
+        desc: `<p class="text-lg md:text-lg xl:text-xl leading-6 md:leading-8 font-quicksand text-justify">Cross-border Transactions Facilitation</p>`,
       },
     ],
     image: "/pexels-pixabay-210600.jpg",
@@ -305,25 +303,25 @@ export const strategiesData = [
 export const aboutSections = [
   {
     title: "Driven by Alpha. Powered by Data",
-    text: `True alpha comes from resilience, innovation, adaptability, and a relentless pursuit of excellence. That's why we combine robust institutional investment services expertise with a boutique, client-centric approach, offering tailored wealth management solutions that align with your financial goals. Whether you’re navigating volatile markets or securing multi-generational wealth through advanced financial planning, our commitment remains unwavering: to protect, grow, and optimize your financial legacy with integrity, transparency, and a long-term perspective, consistently aiming for risk-adjusted returns and capital growth.`,
+    text: `True alpha comes from resilience, innovation, adaptability, and a relentless pursuit of excellence. That's why we combine robust institutional investment management expertise with a boutique, client-centric approach as an independent family office and private wealth advisor in Lagos, offering tailored private wealth management solutions and family office services that align with your financial goals. Whether you're navigating volatile markets or securing multi-generational wealth through advanced estate planning and succession planning, our commitment remains unwavering: to protect, grow, and optimize your financial legacy with integrity, transparency, and a long-term fiduciary perspective, consistently aiming for risk-adjusted returns and capital growth for high-net-worth families in Nigeria.`,
     imageUrl: "/about/pexels-filipgrobgaard-28426645.jpg",
     linkUrl: "/",
   },
   {
     title: "Proven Performance, Trusted by Investors",
-    text: `At Run Alpha, our commitment to delivering consistent capital growth has led to a growing track record of success and increasing investor confidence in investment management in Africa. As our performance continues to strengthen, we have attracted a diverse group of high-net-worth individuals and institutional investors. By refining our portfolio strategies and leveraging data-driven insights, we have further optimized risk-adjusted performance and portfolio optimization, deepening trust among our investors and partners. Our dedication to excellence and innovation has positioned us as a trusted partner in investment advisory in Africa, driving long-term growth and success for our clients.`,
+    text: `At Run Alpha, our commitment to delivering consistent capital growth and comprehensive wealth management has led to a strong track record of success and increasing investor confidence since 2021. As our performance continues to strengthen, we have attracted a diverse group of high-net-worth individuals and institutional investors seeking independent private wealth management and family office services in Lagos, Nigeria, and the diaspora. By refining our wealth management strategies and leveraging data-driven insights, we have optimized risk-adjusted returns while executing sophisticated wealth transfer and estate planning solutions for our clients. Our dedication to excellence and innovation has positioned us as a trusted independent family office and private wealth advisor in Lagos, driving long-term growth, legacy preservation, and sustained success for high-net-worth families.`,
     imageUrl: "/two-african-businessman-sitting-outside-cafe.jpg",
     linkUrl: "/",
   },
   {
     title: "Our Investment Philosophy",
-    text: `Our philosophy is centered on generating consistent, risk-adjusted returns by employing a dynamic mix of fundamental research, quantitative analysis, and macroeconomic insights. Our investment strategies span across equities, fixed income, derivatives, and alternative assets such as hedge fund investment opportunities, providing diversified exposure while maintaining a strong focus on risk management and portfolio optimization. By staying adaptable and offering sustainable investment solutions, we aim to protect and grow our client’s wealth over the long term. Our quantitative investment strategies are designed to deliver alpha in any market environment, providing a competitive edge and driving long-term success for our clients' financial security and capital growth.`,
+    text: `Our investment philosophy is centered on generating consistent, risk-adjusted returns by employing a dynamic mix of fundamental research, quantitative analysis, and macroeconomic insights. Our wealth management strategies span across equities, fixed income, derivatives, and alternative assets such as hedge fund investment opportunities and private equity, providing diversified exposure while maintaining a strong focus on risk management and portfolio optimization. As a fiduciary family office and private wealth management firm in Nigeria, we stay adaptable and offer sustainable investment solutions, aiming to protect and grow our clients' wealth over the long term. Our quantitative investment strategies are designed to deliver alpha in any market environment, providing a competitive edge and driving long-term success for our clients' financial security and capital growth.`,
     imageUrl: "/pexels-googledeepmind-17485658.jpg",
     linkUrl: "/services",
   },
   {
-    title: "Building for the future",
-    text: `Investor confidence is built on transparency, integrity, and a relentless focus on delivering results for clients seeking investment management in Africa and the diaspora. We maintain open communication, providing insights and strategic financial advisory guidance to our clients. With a proven track record of success, we continue to refine and expand our approach, ensuring alignment with evolving market opportunities for comprehensive wealth management. As we grow, our mission remains unchanged: to generate data-driven alpha and create lasting value for our client's long-term and short-term investments. At Run Alpha, our momentum is strong, our strategies are refined, and our clients’ trust continues to grow as we scale new heights; we remain focused on delivering excellence and positioning our clients for sustained success.`,
+    title: "Building for the Future",
+    text: `Investor confidence is built on transparency, integrity, and a relentless focus on delivering results for clients seeking private wealth management and family office services in Lagos, Nigeria, and across the diaspora. As an independent, boutique family office and private wealth management firm, we maintain open communication, providing insights and strategic financial advisory guidance to our clients. With a proven track record of success in wealth management and estate planning, we continue to refine and expand our approach, ensuring alignment with evolving market opportunities for comprehensive wealth management. As we grow, our mission remains unchanged: to generate data-driven alpha and create lasting value for our clients' long-term and short-term investments. At Run Alpha, our momentum is strong, our investment strategies are refined, and our clients' trust continues to grow as we scale new heights; we remain focused on delivering excellence and positioning high-net-worth families for sustained success.`,
     imageUrl: "/unsplash.jpg",
     linkUrl: "/team",
   },

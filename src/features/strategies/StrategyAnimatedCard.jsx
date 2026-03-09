@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { FaCircle } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
+const fadeUp = {
+  hidden: { y: 24, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
 // eslint-disable-next-line react/prop-types
 const StrategyAnimatedCard = ({
   title,
@@ -11,78 +16,92 @@ const StrategyAnimatedCard = ({
   services,
   disclaimerButton,
 }) => {
-  const navigate = useNavigate(); // Hook for navigation
-  const handleDisclaimerClick = () => {
-    navigate("/disclaimer");
-  };
+  const navigate = useNavigate();
+  const isEven = index % 2 === 0;
+
   return (
-    <div
-      className={`relative mx-auto flex h-auto w-full flex-col items-center gap-6 overflow-hidden py-12 sm:flex-row sm:gap-12 md:h-full md:py-0`}
-    >
-      <motion.img
-        className="absolute top-0 right-0 -z-2 flex h-full w-full flex-col object-cover opacity-40"
-        src={image}
-        alt={title}
-      />
-
-      <div className="absolute top-0 left-0 -z-1 h-full w-full bg-black/70" />
-
-      <div className="justify-content-center container mx-auto flex h-full w-full items-center rounded-md px-4 py-6 sm:py-12 md:px-16 lg:px-28 xl:px-36">
-        <div
-          className={`flex h-full max-w-5xl flex-col gap-3 rounded-lg text-white shadow-md sm:gap-6 md:backdrop-blur-3xl ${(index + 1) % 2 === 0 ? "ml-auto" : "mr-auto"} mx-0 md:p-8`}
+    <section className={isEven ? "bg-white" : "bg-gray-50"}>
+      <motion.div
+        className={`mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:gap-16 lg:py-24 ${
+          isEven ? "lg:flex-row-reverse" : "lg:flex-row"
+        }`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.12 } },
+        }}
+      >
+        {/* Image */}
+        <motion.div
+          className="flex-1"
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <motion.h2
-            className={`font-lora decoration-secondary/80 mb-8 text-2xl font-semibold tracking-wider underline underline-offset-8 sm:text-3xl md:text-5xl`}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: false }}
-          >
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src={image}
+              alt={title}
+              className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105 lg:h-[450px]"
+              loading="lazy"
+            />
+          </div>
+        </motion.div>
+
+        {/* Content */}
+        <motion.div
+          className="flex-1 space-y-6"
+          variants={fadeUp}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <span className="text-secondary font-quicksand text-sm font-semibold tracking-widest uppercase">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <h2 className="font-lora text-alpha text-2xl font-bold md:text-3xl lg:text-4xl">
             {title}
-          </motion.h2>
-          <motion.p
+          </h2>
+
+          <div
             dangerouslySetInnerHTML={{ __html: description }}
-            className="font-quicksand text-justify text-lg md:leading-10 xl:text-xl"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: false }}
+            className="font-quicksand text-base leading-relaxed text-gray-600 lg:text-lg [&_a]:text-secondary [&_a]:underline [&_a]:underline-offset-2"
           />
+
+          {/* Services list */}
+          {services && services.length > 0 && (
+            <ul className="space-y-3 pt-2">
+              {services.map((service) => (
+                <motion.li
+                  key={service.id}
+                  className="flex items-start gap-3"
+                  variants={fadeUp}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <FaCircle className="text-secondary mt-2 shrink-0 text-[6px]" />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: service.desc }}
+                    className="font-quicksand text-base leading-relaxed text-gray-600 [&_span]:text-alpha [&_span]:font-semibold"
+                  />
+                </motion.li>
+              ))}
+            </ul>
+          )}
+
+          {/* Disclaimer button */}
           {disclaimerButton && (
             <motion.button
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: false }}
-              onClick={handleDisclaimerClick}
-              className="bg-secondary hover:bg-secondary/60 mt-8 rounded-md border-none px-4 py-2 font-semibold transition duration-300 ease-in-out md:w-1/2 lg:w-1/4"
+              onClick={() => navigate("/disclaimer")}
+              className="bg-secondary font-quicksand mt-4 inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:brightness-110"
+              variants={fadeUp}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
               Review Disclaimer
             </motion.button>
           )}
-          {services && (
-            <div className="flex flex-wrap gap-3">
-              {services.map((service) => (
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  viewport={{ once: false }}
-                  key={service.id}
-                  className="flex items-center gap-4"
-                >
-                  <FaCircle className="text-secondary text-xs" />
-                  <p
-                    dangerouslySetInnerHTML={{ __html: service.desc }}
-                    className="text-base font-medium"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

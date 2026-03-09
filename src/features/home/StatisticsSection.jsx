@@ -2,86 +2,101 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
-const StatisticsSection = () => {
-  const { ref: retentionRef, inView: retentionInView } = useInView({
-    triggerOnce: false,
-  });
-  const { ref: teamRef, inView: teamInView } = useInView({
-    triggerOnce: false,
-  });
-  const { ref: experienceRef, inView: experienceInView } = useInView({
-    triggerOnce: false,
-  });
-  const { ref: assetsRef, inView: assetsInView } = useInView({
-    triggerOnce: false,
-  });
+const fadeUp = {
+  hidden: { y: 24, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
+const stats = [
+  { id: "assets", end: 5.0, decimals: 1, prefix: "₦", suffix: "bn", label: "Assets under Management", duration: 5 },
+  { id: "retention", end: 95, decimals: 0, prefix: "", suffix: "%", label: "Client Retention Rate", duration: 3 },
+  { id: "team", end: 6, decimals: 0, prefix: "", suffix: "", label: "Experienced Private Wealth Management Team", duration: 3 },
+  { id: "experience", end: 36, decimals: 0, prefix: "", suffix: "", label: "Years Cumulative Experience", duration: 3 },
+];
+
+const StatCard = ({ stat }) => {
+  const { ref, inView } = useInView({ triggerOnce: false });
 
   return (
-    <div className="font-quicksand text-alpha flex h-fit max-w-screen flex-col items-center justify-center gap-8 bg-gray-100 p-8 px-8 md:h-[625px] md:flex-row md:p-16 lg:gap-48 lg:p-32">
-      {/* Left Section */}
+    <motion.div
+      ref={ref}
+      className="rounded-2xl border border-gray-100 bg-white px-6 py-8 text-center shadow-sm transition-shadow duration-300 hover:shadow-md"
+      variants={fadeUp}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <p className="text-alpha font-quicksand mb-2 text-4xl font-bold md:text-5xl">
+        {stat.prefix}
+        {inView && (
+          <CountUp start={0} end={stat.end} duration={stat.duration} decimals={stat.decimals} />
+        )}
+        {stat.suffix}
+      </p>
+      <p className="font-quicksand text-sm leading-snug text-gray-500 md:text-base">
+        {stat.label}
+      </p>
+    </motion.div>
+  );
+};
+
+/* Vertical fading divider line */
+const FadingDivider = () => (
+  <div className="mx-auto hidden w-px lg:block">
+    <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+  </div>
+);
+
+const StatisticsSection = () => {
+  return (
+    <section className="bg-gray-50 py-20 md:py-28">
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="space-y-4 text-center md:text-start"
+        className="mx-auto max-w-7xl px-6 md:px-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.12 } },
+        }}
       >
-        <p className="text-lg md:text-xl">Est. since</p>
-        <p className="text-3xl font-bold md:text-6xl">2021</p>
-        <p className="max-w-xs text-base md:text-lg">
-          Founded in 2021, we have crafted winning investment strategies that
-          have demonstrated resilience, adaptability, and capital growth across
-          market cycles, attracting a diverse group of high-net-worth
-          individuals.
-        </p>
-      </motion.div>
+        {/* Two-column layout with fading divider */}
+        <div className="flex flex-col items-stretch gap-16 lg:flex-row lg:gap-0">
+          {/* Left — story */}
+          <motion.div
+            className="flex flex-1 flex-col justify-center space-y-4 lg:pr-16"
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-secondary h-[2px] w-10 rounded-full" />
+              <span className="font-quicksand text-secondary text-sm font-semibold tracking-widest uppercase">
+                Our Track Record
+              </span>
+            </div>
+            <p className="font-lora text-alpha text-4xl font-bold md:text-6xl">2021</p>
+            <p className="font-quicksand max-w-md text-base leading-relaxed text-gray-600 md:text-lg">
+              Founded in 2021, we have crafted winning investment strategies and
+              legacy planning solutions that have demonstrated resilience,
+              adaptability, and capital growth across market cycles, attracting a
+              diverse group of high-net-worth individuals and families seeking
+              boutique family office services and private wealth advisory in
+              Nigeria.
+            </p>
+          </motion.div>
 
-      {/* Divider */}
-      <div className="bg-alpha hidden h-full w-[1px] sm:block" />
+          {/* Fading divider */}
+          <FadingDivider />
 
-      {/* Right Statistics Section */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col gap-12"
-      >
-        {/* Assets Under Management */}
-        <div className="text-center" ref={assetsRef}>
-          <p className="flex justify-center text-2xl font-bold md:text-4xl">
-            ₦
-            {assetsInView && (
-              <CountUp start={0} end={1.5} duration={6} decimals={2} />
-            )}
-            bn
-          </p>
-          <p className="md:text-lg">Assets under Management</p>
-        </div>
-
-        {/* Client Retention Rate */}
-        <div className="text-center" ref={retentionRef}>
-          <p className="text-2xl font-bold md:text-4xl">
-            {retentionInView && <CountUp start={0} end={95} duration={3} />}%
-          </p>
-          <p className="md:text-lg">Client Retention Rate</p>
-        </div>
-
-        {/* Experienced Team */}
-        <div className="mb-6 text-center sm:mb-0" ref={teamRef}>
-          <p className="text-2xl font-bold md:text-4xl">
-            {teamInView && <CountUp start={0} end={6} duration={3} />}
-          </p>
-          <p className="md:text-lg">Experienced team</p>
-        </div>
-
-        {/* Cumulative Experience */}
-        <div className="text-center" ref={experienceRef}>
-          <p className="text-2xl font-bold md:text-4xl">
-            {experienceInView && <CountUp start={0} end={36} duration={3} />}
-          </p>
-          <p className="md:text-lg">Years cumulative experience</p>
+          {/* Right — stat cards */}
+          <div className="flex flex-1 items-center lg:pl-16">
+            <div className="grid w-full grid-cols-2 gap-5">
+              {stats.map((stat) => (
+                <StatCard key={stat.id} stat={stat} />
+              ))}
+            </div>
+          </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
