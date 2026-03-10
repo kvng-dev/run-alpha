@@ -9,7 +9,7 @@ const fadeUp = {
 const HeroSectionCard = ({ data: { backgroundImage, description, title } }) => {
   return (
     <div
-      className="relative h-[400px] w-full overflow-hidden bg-cover bg-center text-center sm:h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh]"
+      className="relative min-h-[400px] w-full overflow-hidden bg-cover bg-center text-center sm:min-h-[50vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[90vh]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
       role="img"
       aria-label={`${title} - RunAlpha ${description.substring(0, 100)}`}
@@ -29,7 +29,7 @@ const HeroSectionCard = ({ data: { backgroundImage, description, title } }) => {
 
       {/* Content */}
       <motion.div
-        className="absolute inset-0 z-8 flex flex-col items-center justify-center px-6 md:px-12 lg:px-16"
+        className="absolute inset-0 z-8 flex flex-col items-center justify-center px-6 pt-20 md:px-12 lg:px-16"
         initial="hidden"
         animate="visible"
         variants={{

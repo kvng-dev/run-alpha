@@ -10,7 +10,7 @@ const fadeUp = {
 const GetIntouch = () => {
   return (
     <motion.section
-      className="bg-alpha relative overflow-hidden py-20 text-center text-white md:py-28"
+      className="bg-alpha relative overflow-hidden py-14 text-center text-white sm:py-20 md:py-28"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -23,7 +23,7 @@ const GetIntouch = () => {
       <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/5" />
       <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-white/5" />
 
-      <div className="relative z-10 mx-auto max-w-3xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-6 md:px-12">
         <motion.div
           className="mb-4 flex items-center justify-center gap-3"
           variants={fadeUp}
@@ -37,7 +37,7 @@ const GetIntouch = () => {
         </motion.div>
 
         <motion.h2
-          className="font-lora mb-4 text-3xl font-bold md:text-4xl"
+          className="font-lora mb-4 text-2xl font-bold sm:text-3xl md:text-4xl"
           variants={fadeUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -45,7 +45,7 @@ const GetIntouch = () => {
         </motion.h2>
 
         <motion.p
-          className="font-quicksand mx-auto mb-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg"
+          className="font-quicksand mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:mb-8 sm:text-base md:text-lg"
           variants={fadeUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -60,7 +60,7 @@ const GetIntouch = () => {
         >
           <Link
             to="/contact"
-            className="font-quicksand group inline-flex items-center gap-3 rounded-full border-2 border-white/30 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10"
+            className="font-quicksand group inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10 sm:gap-3 sm:px-8 sm:py-4 sm:text-lg"
           >
             Let&apos;s talk
             <BsArrowRight

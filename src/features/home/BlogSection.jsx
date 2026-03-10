@@ -105,13 +105,13 @@ const BlogCarousel = () => {
 
   return (
     <section
-      className="bg-gray-50 py-20 md:py-28"
+      className="bg-gray-50 py-14 sm:py-20 md:py-28"
       aria-label="Investment insights and articles"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-12">
         {/* Header */}
         <motion.header
-          className="mb-14 text-center"
+          className="mb-8 text-center sm:mb-14"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -132,14 +132,14 @@ const BlogCarousel = () => {
             <div className="bg-secondary h-[2px] w-8 rounded-full" />
           </motion.div>
           <motion.h2
-            className="font-lora text-alpha mb-4 text-3xl font-bold md:text-4xl"
+            className="font-lora text-alpha mb-4 text-2xl font-bold sm:text-3xl md:text-4xl"
             variants={fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             Investment Insights & Market Analysis
           </motion.h2>
           <motion.p
-            className="font-quicksand mx-auto max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg"
+            className="font-quicksand mx-auto max-w-3xl text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg"
             variants={fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
@@ -182,7 +182,7 @@ const BlogCarousel = () => {
                           src={post.image}
                           alt={post.imageAlt}
                           loading={index === 0 ? "eager" : "lazy"}
-                          className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-full md:min-h-[380px]"
+                          className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-64 md:h-full md:min-h-[380px]"
                         />
                         <div className="absolute top-4 left-4">
                           <span className="font-quicksand bg-alpha rounded-full px-3 py-1 text-xs font-semibold text-white">
@@ -192,15 +192,15 @@ const BlogCarousel = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex flex-col justify-between p-6 md:w-1/2 md:p-8">
+                      <div className="flex flex-col justify-between p-4 sm:p-6 md:w-1/2 md:p-8">
                         <div>
-                          <h3 className="font-lora group-hover:text-alpha mb-4 text-xl font-bold text-gray-900 transition-colors duration-300 md:text-2xl">
+                          <h3 className="font-lora group-hover:text-alpha mb-3 text-lg font-bold text-gray-900 transition-colors duration-300 sm:mb-4 sm:text-xl md:text-2xl">
                             {post.title}
                           </h3>
-                          <p className="font-quicksand mb-6 text-sm leading-relaxed text-gray-600 md:text-base">
+                          <p className="font-quicksand mb-4 text-xs leading-relaxed text-gray-600 sm:mb-6 sm:text-sm md:text-base">
                             {post.excerpt}
                           </p>
-                          <div className="font-quicksand mb-6 flex flex-wrap items-center gap-4 text-xs text-gray-400 md:text-sm">
+                          <div className="font-quicksand mb-4 flex flex-wrap items-center gap-3 text-[0.65rem] text-gray-400 sm:mb-6 sm:gap-4 sm:text-xs md:text-sm">
                             <div className="flex items-center gap-1.5">
                               <User size={14} aria-hidden="true" />
                               <span>{post.author}</span>
@@ -250,22 +250,22 @@ const BlogCarousel = () => {
           {/* Prev / Next */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-3 -translate-y-1/2 rounded-full bg-white/90 p-2.5 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:outline-none md:left-4 md:p-3"
+            className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white/90 p-1.5 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:outline-none sm:left-3 sm:p-2.5 md:left-4 md:p-3"
             aria-label={`Previous article: ${blogPosts[currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1].title}`}
           >
-            <ChevronLeft size={22} className="text-alpha" aria-hidden="true" />
+            <ChevronLeft className="text-alpha h-4 w-4 sm:h-[22px] sm:w-[22px]" aria-hidden="true" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full bg-white/90 p-2.5 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:outline-none md:right-4 md:p-3"
+            className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white/90 p-1.5 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:outline-none sm:right-3 sm:p-2.5 md:right-4 md:p-3"
             aria-label={`Next article: ${blogPosts[currentIndex === blogPosts.length - 1 ? 0 : currentIndex + 1].title}`}
           >
-            <ChevronRight size={22} className="text-alpha" aria-hidden="true" />
+            <ChevronRight className="text-alpha h-4 w-4 sm:h-[22px] sm:w-[22px]" aria-hidden="true" />
           </button>
 
           {/* Dots */}
           <div
-            className="mt-8 flex justify-center gap-2"
+            className="mt-5 flex justify-center gap-2 sm:mt-8"
             role="tablist"
             aria-label="Article navigation"
           >
@@ -287,7 +287,7 @@ const BlogCarousel = () => {
         </motion.div>
 
         {/* View all */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center sm:mt-12">
           <a
             href="https://blog.runalpha.co"
             className="bg-alpha font-quicksand inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:brightness-110 sm:text-base"

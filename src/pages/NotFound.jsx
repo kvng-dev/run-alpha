@@ -11,9 +11,9 @@ function NotFound() {
         description="The page you're looking for doesn't exist. Return to RunAlpha's homepage to explore our investment management services."
         noIndex={true}
       />
-      <main className="flex h-screen items-center justify-center bg-gray-100 p-12">
+      <main className="flex h-screen items-center justify-center bg-gray-100 p-4 sm:p-8 md:p-12">
 
-        <div className="font-quicksand max-w-4xl flex-1 rounded-md border border-gray-200 bg-white p-12 text-center">
+        <div className="font-quicksand max-w-4xl flex-1 rounded-md border border-gray-200 bg-white p-6 text-center sm:p-8 md:p-12">
           <h1 className="mb-8">
             The page you are looking for could not be found 😢
           </h1>

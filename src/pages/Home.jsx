@@ -21,12 +21,12 @@ function Home() {
       <StrategiesHomeSection />
       <GetIntouch />
       <BlogCarousel />
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 md:px-16 lg:px-28 xl:px-36">
-          <h2 className="font-lora text-alpha mb-8 text-center text-3xl font-bold">
+      <section className="bg-gray-50 py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-12">
+          <h2 className="font-lora text-alpha mb-6 text-center text-2xl font-bold sm:mb-8 sm:text-3xl">
             Investment Resources & Market Insights
           </h2>
-          <p className="font-quicksand mx-auto mb-8 max-w-3xl text-center text-lg text-gray-700">
+          <p className="font-quicksand mx-auto mb-6 max-w-3xl text-center text-sm text-gray-700 sm:mb-8 sm:text-base md:text-lg">
             Stay informed with insights from leading financial institutions and
             regulatory bodies. Understanding global markets and local
             regulations is crucial for successful wealth management and
@@ -39,10 +39,10 @@ function Home() {
               href="https://www.cbn.gov.ng"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   Central Bank of Nigeria
                 </h3>
                 <ExternalLink
@@ -61,10 +61,10 @@ function Home() {
               href="https://sec.gov.ng"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   Securities & Exchange Commission
                 </h3>
                 <ExternalLink
@@ -83,10 +83,10 @@ function Home() {
               href="https://ngxgroup.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   Nigerian Exchange Group
                 </h3>
                 <ExternalLink
@@ -106,10 +106,10 @@ function Home() {
               href="https://www.imf.org/en/Countries/NGA"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   IMF Nigeria Economic Outlook
                 </h3>
                 <ExternalLink
@@ -129,10 +129,10 @@ function Home() {
               href="https://www.worldbank.org/en/country/nigeria"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   World Bank Nigeria Data
                 </h3>
                 <ExternalLink
@@ -152,10 +152,10 @@ function Home() {
               href="https://www.bloomberg.com/africa"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group rounded-lg bg-white p-4 shadow-md transition-shadow hover:shadow-lg sm:p-6"
             >
               <div className="mb-3 flex items-start justify-between">
-                <h3 className="font-quicksand text-alpha text-lg font-semibold">
+                <h3 className="font-quicksand text-alpha text-base font-semibold sm:text-lg">
                   Bloomberg Africa Markets
                 </h3>
                 <ExternalLink

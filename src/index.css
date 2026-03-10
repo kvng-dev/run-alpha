@@ -33,13 +33,20 @@
   font-family: "Inter", sans-serif;
   darker shade of blue: #0a2239
 } */
-*:hover{
-  cursor: none
+@media (hover: hover) and (pointer: fine) {
+  *:hover {
+    cursor: none;
+  }
+
+  body {
+    cursor: none;
+  }
 }
 
-body{
-  cursor: none;
+html,
+body {
   overflow-x: hidden;
+  width: 100%;
 }
 
 video::-webkit-media-controls {

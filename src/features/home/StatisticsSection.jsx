@@ -20,18 +20,18 @@ const StatCard = ({ stat }) => {
   return (
     <motion.div
       ref={ref}
-      className="rounded-2xl border border-gray-100 bg-white px-6 py-8 text-center shadow-sm transition-shadow duration-300 hover:shadow-md"
+      className="rounded-2xl border border-gray-100 bg-white px-4 py-6 text-center shadow-sm transition-shadow duration-300 hover:shadow-md sm:px-6 sm:py-8"
       variants={fadeUp}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <p className="text-alpha font-quicksand mb-2 text-4xl font-bold md:text-5xl">
+      <p className="text-alpha font-quicksand mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
         {stat.prefix}
         {inView && (
           <CountUp start={0} end={stat.end} duration={stat.duration} decimals={stat.decimals} />
         )}
         {stat.suffix}
       </p>
-      <p className="font-quicksand text-sm leading-snug text-gray-500 md:text-base">
+      <p className="font-quicksand text-xs leading-snug text-gray-500 sm:text-sm md:text-base">
         {stat.label}
       </p>
     </motion.div>
@@ -47,9 +47,9 @@ const FadingDivider = () => (
 
 const StatisticsSection = () => {
   return (
-    <section className="bg-gray-50 py-20 md:py-28">
+    <section className="bg-gray-50 py-14 sm:py-20 md:py-28">
       <motion.div
-        className="mx-auto max-w-7xl px-6 md:px-12"
+        className="mx-auto max-w-7xl px-5 sm:px-6 md:px-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -59,7 +59,7 @@ const StatisticsSection = () => {
         }}
       >
         {/* Two-column layout with fading divider */}
-        <div className="flex flex-col items-stretch gap-16 lg:flex-row lg:gap-0">
+        <div className="flex flex-col items-stretch gap-10 sm:gap-16 lg:flex-row lg:gap-0">
           {/* Left — story */}
           <motion.div
             className="flex flex-1 flex-col justify-center space-y-4 lg:pr-16"
@@ -72,8 +72,8 @@ const StatisticsSection = () => {
                 Our Track Record
               </span>
             </div>
-            <p className="font-lora text-alpha text-4xl font-bold md:text-6xl">2021</p>
-            <p className="font-quicksand max-w-md text-base leading-relaxed text-gray-600 md:text-lg">
+            <p className="font-lora text-alpha text-3xl font-bold sm:text-4xl md:text-6xl">2021</p>
+            <p className="font-quicksand max-w-md text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg">
               Founded in 2021, we have crafted winning investment strategies and
               legacy planning solutions that have demonstrated resilience,
               adaptability, and capital growth across market cycles, attracting a
@@ -88,7 +88,7 @@ const StatisticsSection = () => {
 
           {/* Right — stat cards */}
           <div className="flex flex-1 items-center lg:pl-16">
-            <div className="grid w-full grid-cols-2 gap-5">
+            <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
               {stats.map((stat) => (
                 <StatCard key={stat.id} stat={stat} />
               ))}

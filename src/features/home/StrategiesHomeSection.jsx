@@ -10,9 +10,9 @@ const fadeUp = {
 
 const StrategiesHomeSection = () => {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-14 sm:py-20 md:py-28">
       <motion.div
-        className="mx-auto max-w-7xl px-6 md:px-12"
+        className="mx-auto max-w-7xl px-5 sm:px-6 md:px-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -23,7 +23,7 @@ const StrategiesHomeSection = () => {
       >
         {/* Section header */}
         <motion.div
-          className="mb-14 text-center"
+          className="mb-8 text-center sm:mb-14"
           variants={fadeUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -34,7 +34,7 @@ const StrategiesHomeSection = () => {
             </span>
             <div className="bg-secondary h-[2px] w-8 rounded-full" />
           </div>
-          <h2 className="font-lora text-alpha text-3xl font-bold md:text-4xl lg:text-5xl">
+          <h2 className="font-lora text-alpha text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
             Business Offerings
           </h2>
         </motion.div>
@@ -49,7 +49,7 @@ const StrategiesHomeSection = () => {
             >
               <Link
                 to="/services"
-                className="group relative block h-[400px] overflow-hidden rounded-2xl md:h-[450px]"
+                className="group relative block h-[320px] overflow-hidden rounded-2xl sm:h-[400px] md:h-[450px]"
               >
                 {/* Image */}
                 <img
@@ -63,14 +63,14 @@ const StrategiesHomeSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-500 group-hover:from-black/90" />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8">
                   <span className="font-quicksand text-secondary mb-2 text-xs font-semibold tracking-widest uppercase">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-lora mb-2 text-2xl font-bold text-white md:text-3xl">
+                  <h3 className="font-lora mb-2 text-xl font-bold text-white sm:text-2xl md:text-3xl">
                     {strategy.title}
                   </h3>
-                  <p className="font-quicksand mb-4 line-clamp-3 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
+                  <p className="font-quicksand mb-3 line-clamp-2 max-w-md text-xs leading-relaxed text-white/75 sm:mb-4 sm:line-clamp-3 sm:text-sm md:text-base">
                     {strategy.description}
                   </p>
                   <div className="flex items-center gap-2 text-sm font-semibold text-white transition-all duration-300 group-hover:gap-3">

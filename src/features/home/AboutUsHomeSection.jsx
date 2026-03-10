@@ -15,7 +15,7 @@ function AboutUsHomeSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-28 lg:py-36"
+        className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 md:px-12 md:py-28 lg:py-36"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
@@ -38,7 +38,7 @@ function AboutUsHomeSection() {
 
         {/* Headline */}
         <motion.h2
-          className="font-lora mb-10 max-w-4xl text-3xl leading-snug font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl"
+          className="font-lora mb-6 max-w-4xl text-2xl leading-snug font-bold text-white sm:text-3xl sm:mb-10 md:text-5xl lg:text-6xl"
           variants={fadeUp}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
@@ -50,7 +50,7 @@ function AboutUsHomeSection() {
 
         {/* Body */}
         <motion.p
-          className="font-quicksand mb-10 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg"
+          className="font-quicksand mb-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:mb-10 sm:text-base md:text-lg"
           variants={fadeUp}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
@@ -73,7 +73,7 @@ function AboutUsHomeSection() {
         >
           <Link
             to="/aboutus"
-            className="font-quicksand group inline-flex items-center gap-3 rounded-full border-2 border-white/30 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10 sm:text-base"
+            className="font-quicksand group inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10 sm:gap-3 sm:px-7 sm:py-3 sm:text-base"
           >
             Read more about us
             <BsArrowRight

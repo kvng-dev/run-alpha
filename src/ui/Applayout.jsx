@@ -6,7 +6,7 @@ import Jump from "./Jump";
 
 function Applayout() {
   return (
-    <div className="mx-auto grid max-w-screen grid-cols-[auto] grid-rows-[auto,1fr,auto,auto] overflow-hidden">
+    <div className="grid min-h-dvh w-full max-w-full grid-cols-[minmax(0,1fr)] grid-rows-[auto,1fr,auto,auto] overflow-x-hidden">
       <div className="hidden lg:flex">
         <CustomCursor />
       </div>
