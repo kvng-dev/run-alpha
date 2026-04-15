@@ -17,7 +17,7 @@ const SEO = ({
   title,
   description,
   keywords = "financial strategy, hedge fund, innovation, investments, wealth management, fintech, sustainable investments, financial solutions, portfolio management",
-  image = "/logos/RUN%20ALPHA%20Logo%20-%20Black%20with%20White%20Background%20-%205000x5000.png",
+  image = "/logos/og-image.png",
   logo = "/logos/run-logo.svg",
   type = "website",
   noIndex = false,

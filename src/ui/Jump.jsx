@@ -6,16 +6,18 @@ import { FaArrowUp } from "react-icons/fa";
 function Jump() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      
-      if (window.scrollY > 600) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsVisible(window.scrollY > 600);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
@@ -28,7 +30,7 @@ function Jump() {
   };
   return (
     <div
-    className={`fixed bottom-6 right-6 z-50 p-2 rounded-full bg-secondary text-white cursor-pointer transition-opacity duration-300 ${isVisible ? 'opacity-100 animate-pulse' : 'opacity-0'}`}
+    className={`fixed bottom-6 right-6 z-50 p-2 rounded-full bg-secondary text-white cursor-pointer transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
     onClick={scrollToTop}
     aria-label="Scroll to top"
   >

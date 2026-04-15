@@ -15,16 +15,27 @@ const CustomCursor = () => {
   const ringY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    let rafId = null;
+    let latestX = -100;
+    let latestY = -100;
+
     const moveCursor = (e) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      latestX = e.clientX;
+      latestY = e.clientY;
+      if (rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          cursorX.set(latestX);
+          cursorY.set(latestY);
+          if (!isVisible) setIsVisible(true);
+          rafId = null;
+        });
+      }
     };
 
     const handleLeave = () => setIsVisible(false);
     const handleEnter = () => setIsVisible(true);
 
-    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("mousemove", moveCursor, { passive: true });
     document.addEventListener("mouseleave", handleLeave);
     document.addEventListener("mouseenter", handleEnter);
 
@@ -32,6 +43,7 @@ const CustomCursor = () => {
       window.removeEventListener("mousemove", moveCursor);
       document.removeEventListener("mouseleave", handleLeave);
       document.removeEventListener("mouseenter", handleEnter);
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, [cursorX, cursorY, isVisible]);
 

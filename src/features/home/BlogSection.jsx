@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   ChevronLeft,
@@ -82,16 +82,30 @@ const blogPosts = [
 const BlogCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Only run the carousel timer when the section is visible on screen
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || !isVisible) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === blogPosts.length - 1 ? 0 : prev + 1,
       );
     }, 5000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, isVisible]);
 
   const nextSlide = () =>
     setCurrentIndex((prev) =>
@@ -105,6 +119,7 @@ const BlogCarousel = () => {
 
   return (
     <section
+      ref={sectionRef}
       className="bg-gray-50 py-14 sm:py-20 md:py-28"
       aria-label="Investment insights and articles"
     >

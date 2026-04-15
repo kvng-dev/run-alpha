@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
@@ -8,18 +9,43 @@ const fadeUp = {
 };
 
 export default function LandingPage() {
+  const videoRef = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Defer video loading until after first paint
+    const timer = requestIdleCallback?.(() => {
+      if (videoRef.current) {
+        videoRef.current.src = "/videos/5224-183786646.mp4";
+        videoRef.current.load();
+      }
+    }) ?? setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.src = "/videos/5224-183786646.mp4";
+        videoRef.current.load();
+      }
+    }, 100);
+
+    return () => {
+      if (typeof timer === "number" && cancelIdleCallback) cancelIdleCallback(timer);
+      else clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="relative h-dvh w-full overflow-hidden">
-      {/* Video background */}
+      {/* Video background — deferred to avoid blocking first paint */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/videos/5224-183786646.mp4" type="video/mp4" />
-      </video>
+        preload="none"
+        poster="/videos/hero-poster.jpg"
+        onCanPlay={() => setVideoLoaded(true)}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+      />
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
