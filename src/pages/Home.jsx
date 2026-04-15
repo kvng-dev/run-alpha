@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <SEO
-        title="Private Wealth Management & Family Office Lagos | RunAlpha"
+        title="Family Office & Private Wealth Management Lagos | RunAlpha"
         description="Leading independent family office and wealth management firm in Lagos. Private wealth management and family office services for high-net-worth families in Nigeria. Book today."
         keywords="private wealth management Lagos, family office Lagos, family office services Lagos, wealth management firms Lagos, independent wealth advisor Lagos, boutique wealth management Lagos, high net worth wealth management Lagos"
       />
