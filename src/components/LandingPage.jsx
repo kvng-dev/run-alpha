@@ -16,12 +16,14 @@ export default function LandingPage() {
     // Defer video loading until after first paint
     const timer = requestIdleCallback?.(() => {
       if (videoRef.current) {
-        videoRef.current.src = "/videos/5224-183786646.mp4";
+        // f_auto,q_auto lets Cloudinary serve a much smaller, modern-format video (webm/av1) per browser
+        videoRef.current.src = "https://res.cloudinary.com/dd5dx6f3h/video/upload/f_auto,q_auto/v1781539030/5224-183786646_xdiume.mp4";
         videoRef.current.load();
       }
     }) ?? setTimeout(() => {
       if (videoRef.current) {
-        videoRef.current.src = "/videos/5224-183786646.mp4";
+        // f_auto,q_auto lets Cloudinary serve a much smaller, modern-format video (webm/av1) per browser
+        videoRef.current.src = "https://res.cloudinary.com/dd5dx6f3h/video/upload/f_auto,q_auto/v1781539030/5224-183786646_xdiume.mp4";
         videoRef.current.load();
       }
     }, 100);
